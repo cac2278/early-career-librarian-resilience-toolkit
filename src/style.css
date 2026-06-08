@@ -30,7 +30,7 @@ body {
 .site-header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 24px 20px;
+  padding: 28px 24px 32px;
 
   display: flex;
   flex-direction: column;
@@ -39,35 +39,33 @@ body {
 
 .site-title {
   display: block;
-  margin-bottom: 18px;
+
+  margin-bottom: 20px;
 
   color: var(--text);
-  text-align: center;
   text-decoration: none;
+  text-align: center;
 
   font-family: system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .site-logo {
   display: block;
-  width: 110px;
-  height: auto;
-  margin: 0 auto 28px;
-}
 
-.site-title-text {
-  display: inline;
+  width: 140px;
+  height: auto;
+
+  margin-bottom: 28px;
 }
 
 .site-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  align-items: center;
+  gap: 14px;
 }
 
 .site-nav a,
