@@ -30,15 +30,19 @@ body {
 .site-header {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 24px 8px;
+  padding: 28px 24px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .site-title {
   display: block;
-
   margin-bottom: 18px;
 
   color: var(--text);
+  text-align: center;
   text-decoration: none;
 
   font-family: system-ui, sans-serif;
@@ -49,19 +53,19 @@ body {
 
 .site-logo {
   display: block;
-
-  width: 140px;
+  width: 110px;
   height: auto;
-
-  margin: 0 0 20px;
+  margin: 0 auto 28px;
 }
 
 .site-title-text {
   display: inline;
 }
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   align-items: center;
 }
@@ -99,7 +103,8 @@ body {
 .nav-dropdown-menu {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
   display: none;
   min-width: 280px;
