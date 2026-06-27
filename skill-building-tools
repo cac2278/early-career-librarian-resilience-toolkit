@@ -73,11 +73,14 @@
           <h1>Practical tools for translating experience, building language, and moving with more clarity</h1>
 
           <p class="lede">
-            These tools are designed for people navigating early-career librarianship, career transitions, job searching, rejection, uncertainty, and professional identity work.
+            These tools are designed for people navigating early-career librarianship,
+            career transitions, job searching, rejection, uncertainty, and professional
+            identity work.
           </p>
 
           <p class="lede">
-            They are not meant to turn every professional challenge into an individual self-improvement project. They are meant to help you name what you already know, recognize transferable skills, and build usable language for next steps.
+            They are meant to help you name what you already know, recognize transferable
+            skills, and build usable language for next steps.
           </p>
         </section>
 
@@ -87,11 +90,14 @@
           </p>
 
           <p>
-            Many people entering librarianship already bring experience in teaching, customer service, research, organizing information, outreach, technology, supervision, writing, care work, project coordination, or community support.
+            Many people entering librarianship already bring experience in teaching,
+            customer service, research, organizing information, outreach, technology,
+            supervision, writing, care work, project coordination, or community support.
           </p>
 
           <p>
-            The challenge is often learning how to translate that experience into the language of library work without minimizing where you came from.
+            The challenge is often learning how to translate that experience into the
+            language of library work without minimizing where you came from.
           </p>
         </section>
 
@@ -99,11 +105,9 @@
           <h2>Use These Tools If...</h2>
 
           <p>
-            You are trying to describe your experience, prepare for interviews, revise a resume, process a difficult professional moment, or understand how your previous work connects to librarianship.
-          </p>
-
-          <p>
-            Start with the tool that matches your current need. You do not need to complete everything.
+            You are trying to describe your experience, prepare for interviews, revise
+            a resume, process a difficult professional moment, or understand how your
+            previous work connects to librarianship.
           </p>
         </section>
 
@@ -111,109 +115,98 @@
           <h2>Choose a Tool</h2>
 
           <div class="related-grid">
-            <a href="reflection-tools.html">
-              Reflection Tools
-            </a>
-
-            <a href="#professional-skills-translator">
-              Professional Skills Translator
-            </a>
+            <a href="reflection-tools.html">Reflection Tools</a>
+            <a href="#professional-skills-translator">Professional Skills Translator</a>
           </div>
-
-          <p>
-            Reflection tools are useful when you need to slow down and make sense of an experience. The skills translator is useful when you need to convert existing work experience into librarian language for resumes, interviews, or professional identity building.
-          </p>
         </article>
 
-        <article class="article-section translator-section" id="professional-skills-translator">
+        <article class="article-section" id="professional-skills-translator">
           <p class="reflection-label">Interactive Tool</p>
 
           <h2>Professional Skills Translator</h2>
 
           <p>
-            Use this tool to connect work you have already done to librarian skills, resume language, and interview talking points.
+            Use this tool to connect work you have already done to librarian skills,
+            resume language, and interview talking points.
           </p>
 
-          <p>
-            This tool does not decide whether you are qualified. It helps you recognize and describe transferable experience in language that fits library work.
-          </p>
+          <form id="career-translator-form">
+            <div class="further-reading">
+              <h3>1. What field are you coming from?</h3>
 
-          <form class="translator-form" id="career-translator-form">
-            <fieldset>
-              <legend>1. What field are you coming from?</legend>
-
-              <label><input name="field" type="checkbox" value="education" /> Education</label>
-              <label><input name="field" type="checkbox" value="customer-service" /> Customer service, retail, or hospitality</label>
-              <label><input name="field" type="checkbox" value="healthcare" /> Healthcare or care work</label>
-              <label><input name="field" type="checkbox" value="nonprofit" /> Nonprofit or community work</label>
-              <label><input name="field" type="checkbox" value="business" /> Business or administration</label>
-              <label><input name="field" type="checkbox" value="technology" /> Information technology</label>
-              <label><input name="field" type="checkbox" value="research" /> Research or graduate study</label>
+              <label><input name="field" type="checkbox" value="education" /> Education</label><br />
+              <label><input name="field" type="checkbox" value="customer-service" /> Customer service, retail, or hospitality</label><br />
+              <label><input name="field" type="checkbox" value="healthcare" /> Healthcare or care work</label><br />
+              <label><input name="field" type="checkbox" value="nonprofit" /> Nonprofit or community work</label><br />
+              <label><input name="field" type="checkbox" value="business" /> Business or administration</label><br />
+              <label><input name="field" type="checkbox" value="technology" /> Information technology</label><br />
+              <label><input name="field" type="checkbox" value="research" /> Research or graduate study</label><br />
               <label><input name="field" type="checkbox" value="arts" /> Arts, museums, archives, or cultural work</label>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>2. What kinds of work have you done?</legend>
+            <div class="further-reading">
+              <h3>2. What kinds of work have you done?</h3>
 
-              <label><input name="skills" type="checkbox" value="service" /> Customer service or public-facing work</label>
-              <label><input name="skills" type="checkbox" value="teaching" /> Teaching, training, tutoring, or coaching</label>
-              <label><input name="skills" type="checkbox" value="supervision" /> Supervising staff, students, or volunteers</label>
-              <label><input name="skills" type="checkbox" value="projects" /> Managing projects or workflows</label>
-              <label><input name="skills" type="checkbox" value="research" /> Research or information gathering</label>
-              <label><input name="skills" type="checkbox" value="writing" /> Writing, editing, or communications</label>
-              <label><input name="skills" type="checkbox" value="events" /> Event planning or programming</label>
-              <label><input name="skills" type="checkbox" value="technology" /> Technology support or troubleshooting</label>
-              <label><input name="skills" type="checkbox" value="outreach" /> Outreach or community engagement</label>
+              <label><input name="skills" type="checkbox" value="service" /> Customer service or public-facing work</label><br />
+              <label><input name="skills" type="checkbox" value="teaching" /> Teaching, training, tutoring, or coaching</label><br />
+              <label><input name="skills" type="checkbox" value="supervision" /> Supervising staff, students, or volunteers</label><br />
+              <label><input name="skills" type="checkbox" value="projects" /> Managing projects or workflows</label><br />
+              <label><input name="skills" type="checkbox" value="research" /> Research or information gathering</label><br />
+              <label><input name="skills" type="checkbox" value="writing" /> Writing, editing, or communications</label><br />
+              <label><input name="skills" type="checkbox" value="events" /> Event planning or programming</label><br />
+              <label><input name="skills" type="checkbox" value="technology" /> Technology support or troubleshooting</label><br />
+              <label><input name="skills" type="checkbox" value="outreach" /> Outreach or community engagement</label><br />
               <label><input name="skills" type="checkbox" value="records" /> Records, files, data, or information management</label>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>3. Which library setting interests you most?</legend>
+            <div class="further-reading">
+              <h3>3. Which library setting interests you most?</h3>
 
-              <label><input name="setting" required type="radio" value="academic" /> Academic libraries</label>
-              <label><input name="setting" type="radio" value="public" /> Public libraries</label>
-              <label><input name="setting" type="radio" value="school" /> School libraries</label>
-              <label><input name="setting" type="radio" value="archives" /> Archives or special collections</label>
-              <label><input name="setting" type="radio" value="health" /> Health sciences libraries</label>
-              <label><input name="setting" type="radio" value="law-government" /> Law or government libraries</label>
+              <label><input name="setting" required type="radio" value="academic" /> Academic libraries</label><br />
+              <label><input name="setting" type="radio" value="public" /> Public libraries</label><br />
+              <label><input name="setting" type="radio" value="school" /> School libraries</label><br />
+              <label><input name="setting" type="radio" value="archives" /> Archives or special collections</label><br />
+              <label><input name="setting" type="radio" value="health" /> Health sciences libraries</label><br />
+              <label><input name="setting" type="radio" value="law-government" /> Law or government libraries</label><br />
               <label><input name="setting" type="radio" value="unsure" /> Unsure</label>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>4. Which areas feel less familiar?</legend>
+            <div class="further-reading">
+              <h3>4. Which areas feel less familiar?</h3>
 
-              <label><input name="growth" type="checkbox" value="reference" /> Reference and research help</label>
-              <label><input name="growth" type="checkbox" value="instruction" /> Library instruction</label>
-              <label><input name="growth" type="checkbox" value="cataloging" /> Cataloging or metadata</label>
-              <label><input name="growth" type="checkbox" value="collections" /> Collection development</label>
-              <label><input name="growth" type="checkbox" value="archives" /> Archives or preservation</label>
-              <label><input name="growth" type="checkbox" value="assessment" /> Assessment and data</label>
+              <label><input name="growth" type="checkbox" value="reference" /> Reference and research help</label><br />
+              <label><input name="growth" type="checkbox" value="instruction" /> Library instruction</label><br />
+              <label><input name="growth" type="checkbox" value="cataloging" /> Cataloging or metadata</label><br />
+              <label><input name="growth" type="checkbox" value="collections" /> Collection development</label><br />
+              <label><input name="growth" type="checkbox" value="archives" /> Archives or preservation</label><br />
+              <label><input name="growth" type="checkbox" value="assessment" /> Assessment and data</label><br />
               <label><input name="growth" type="checkbox" value="management" /> Management or leadership</label>
-            </fieldset>
+            </div>
 
-            <fieldset>
-              <legend>5. Where are you in the MLIS path?</legend>
+            <div class="further-reading">
+              <h3>5. Where are you in the MLIS path?</h3>
 
-              <label><input name="mlis" required type="radio" value="student" /> Current MLIS student</label>
-              <label><input name="mlis" type="radio" value="yes" /> Already have an MLIS</label>
-              <label><input name="mlis" type="radio" value="no" /> Do not have an MLIS</label>
+              <label><input name="mlis" required type="radio" value="student" /> Current MLIS student</label><br />
+              <label><input name="mlis" type="radio" value="yes" /> Already have an MLIS</label><br />
+              <label><input name="mlis" type="radio" value="no" /> Do not have an MLIS</label><br />
               <label><input name="mlis" type="radio" value="considering" /> Considering an MLIS</label>
-            </fieldset>
+            </div>
 
-            <div class="translator-actions">
+            <p>
               <button type="submit">Generate translation</button>
               <button type="button" id="career-translator-reset">Reset</button>
-            </div>
+            </p>
           </form>
 
-          <div class="translator-output" id="career-translator-output" aria-live="polite" hidden></div>
+          <div id="career-translator-output" aria-live="polite" hidden></div>
         </article>
 
         <section class="reflection" id="reflection">
           <p class="reflection-label">A Note on Use</p>
 
           <h2>
-            You are not starting from nothing. Part of the work is learning how to name what you already bring.
+            You are not starting from nothing. Part of the work is learning how
+            to name what you already bring.
           </h2>
         </section>
 
@@ -232,9 +225,7 @@
       <aside class="sidebar-navigator" aria-labelledby="sidebar-title">
         <h2 id="sidebar-title">On This Page</h2>
 
-        <p>
-          Choose a tool based on what you need to do next.
-        </p>
+        <p>Choose a tool based on what you need to do next.</p>
 
         <nav class="sidebar-links" aria-label="Skill-building tools page navigation">
           <a href="#tools-overview">Choose a Tool</a>
@@ -244,317 +235,234 @@
       </aside>
     </div>
 
-    <style>
-      .translator-section {
-        border-top: 1px solid var(--border-color, #222);
-      }
+   <script>
+(function () {
+  const form = document.getElementById('career-translator-form');
+  const output = document.getElementById('career-translator-output');
+  const resetButton = document.getElementById('career-translator-reset');
 
-      .translator-form {
-        margin-top: 1.5rem;
-      }
+  function checkedValues(name) {
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
+      return input.value;
+    });
+  }
 
-      .translator-form fieldset {
-        border: 1px solid var(--border-color, #222);
-        padding: 1rem;
-        margin: 1rem 0;
-        background: var(--soft-background, #f8f5ef);
-      }
+  function radioValue(name) {
+    const selected = document.querySelector('input[name="' + name + '"]:checked');
+    return selected ? selected.value : '';
+  }
 
-      .translator-form legend {
-        font-weight: 700;
-        padding: 0 0.35rem;
-      }
+  function unique(items) {
+    return Array.from(new Set(items));
+  }
 
-      .translator-form label {
-        display: block;
-        margin: 0.55rem 0;
-        line-height: 1.4;
-      }
+  function list(items) {
+    return items.map(function (item) {
+      return '<li>' + item + '</li>';
+    }).join('');
+  }
 
-      .translator-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin: 1rem 0;
-      }
+  function buildStrengths(fields, skills) {
+    let strengths = [];
 
-      .translator-actions button {
-        border: 1px solid #222;
-        background: #222;
-        color: #fff;
-        padding: 0.65rem 0.9rem;
-        font-weight: 700;
-        cursor: pointer;
-      }
+    if (skills.includes('service')) strengths.push('Public service and user-centered support');
+    if (skills.includes('teaching')) strengths.push('Instruction, training, and learning support');
+    if (skills.includes('supervision')) strengths.push('Personnel coordination and leadership');
+    if (skills.includes('projects')) strengths.push('Project management and workflow planning');
+    if (skills.includes('research')) strengths.push('Research support and information-seeking skills');
+    if (skills.includes('writing')) strengths.push('Clear communication and documentation');
+    if (skills.includes('events')) strengths.push('Programming and outreach');
+    if (skills.includes('technology')) strengths.push('Technology support and digital troubleshooting');
+    if (skills.includes('outreach')) strengths.push('Community engagement and partnership-building');
+    if (skills.includes('records')) strengths.push('Information organization and records management');
 
-      .translator-actions button:hover,
-      .translator-actions button:focus {
-        text-decoration: underline;
-      }
+    if (fields.includes('education')) strengths.push('Experience helping people learn');
+    if (fields.includes('healthcare')) strengths.push('Care-centered service and confidentiality awareness');
+    if (fields.includes('technology')) strengths.push('Comfort with systems, tools, and technical problem-solving');
+    if (fields.includes('nonprofit')) strengths.push('Mission-driven community work');
+    if (fields.includes('arts')) strengths.push('Cultural heritage, interpretation, and creative programming');
 
-      .translator-output {
-        margin-top: 1.5rem;
-      }
+    return unique(strengths);
+  }
 
-      .translation-callout {
-        border: 1px solid #222;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        background: #f8f5ef;
-      }
+  function buildTranslations(skills) {
+    let translations = [];
 
-      .translation-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
+    if (skills.includes('service')) translations.push('<strong>Customer service</strong> becomes <strong>public services, patron support, and reference desk readiness</strong>.');
+    if (skills.includes('teaching')) translations.push('<strong>Teaching or training</strong> becomes <strong>library instruction, information literacy, and workshop facilitation</strong>.');
+    if (skills.includes('supervision')) translations.push('<strong>Supervising staff</strong> becomes <strong>personnel management, student worker supervision, and team coordination</strong>.');
+    if (skills.includes('projects')) translations.push('<strong>Project management</strong> becomes <strong>program coordination, implementation planning, and assessment follow-through</strong>.');
+    if (skills.includes('research')) translations.push('<strong>Research experience</strong> becomes <strong>reference, research consultation, and information discovery support</strong>.');
+    if (skills.includes('writing')) translations.push('<strong>Writing and communications</strong> becomes <strong>guides, documentation, outreach, web content, and instructional materials</strong>.');
+    if (skills.includes('events')) translations.push('<strong>Event planning</strong> becomes <strong>library programming, outreach events, exhibits, and community engagement</strong>.');
+    if (skills.includes('technology')) translations.push('<strong>Technology support</strong> becomes <strong>digital literacy, troubleshooting, makerspace support, and emerging technology services</strong>.');
+    if (skills.includes('outreach')) translations.push('<strong>Community outreach</strong> becomes <strong>liaison work, partnerships, engagement, and inclusive services</strong>.');
+    if (skills.includes('records')) translations.push('<strong>Records or file management</strong> becomes <strong>metadata thinking, information organization, archives, and collection stewardship</strong>.');
 
-      .translation-card {
-        border: 1px solid #222;
-        padding: 1rem;
-        background: #f8f5ef;
-      }
+    return translations;
+  }
 
-      .translation-card h3 {
-        margin-top: 0;
-      }
+  function buildResumeBullets(skills, setting) {
+    let bullets = [];
 
-      .translation-card ul {
-        padding-left: 1.25rem;
-      }
+    if (skills.includes('service')) bullets.push('Provided responsive, user-centered support to diverse communities in high-volume service environments.');
+    if (skills.includes('teaching')) bullets.push('Designed and delivered instruction, training, or learning support tailored to varied experience levels.');
+    if (skills.includes('research')) bullets.push('Assisted users with locating, evaluating, and applying information to meet practical or academic needs.');
+    if (skills.includes('projects')) bullets.push('Coordinated projects from planning through completion, balancing timelines, communication, and stakeholder needs.');
+    if (skills.includes('technology')) bullets.push('Supported users with technology tools, troubleshooting, and digital workflows.');
+    if (skills.includes('events')) bullets.push('Planned and facilitated programs, events, or workshops that supported community learning and engagement.');
+    if (skills.includes('records')) bullets.push('Organized records, files, or data using consistent systems to improve access, retrieval, and continuity.');
+    if (skills.includes('outreach')) bullets.push('Built relationships with community partners and connected users with relevant resources and services.');
 
-      .translation-card li {
-        margin-bottom: 0.5rem;
-      }
+    if (setting === 'academic') bullets.push('Connected users with research support, learning resources, and academic success services.');
+    if (setting === 'public') bullets.push('Supported welcoming, inclusive public services for users with a wide range of needs and goals.');
+    if (setting === 'archives') bullets.push('Helped preserve, describe, or contextualize materials for long-term access and use.');
+    if (setting === 'school') bullets.push('Supported student learning, resource access, and curriculum-connected inquiry.');
+    if (setting === 'health') bullets.push('Supported users in locating and applying reliable information for learning, care, or decision-making.');
+    if (setting === 'law-government') bullets.push('Supported access to specialized information, public records, policy materials, or research resources.');
 
-      @media (min-width: 800px) {
-        .translation-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    </style>
+    return unique(bullets);
+  }
 
-    <script>
-      (function () {
-        const form = document.getElementById('career-translator-form');
-        const output = document.getElementById('career-translator-output');
-        const resetButton = document.getElementById('career-translator-reset');
+  function buildGrowthAreas(growth, setting, mlis) {
+    let areas = [];
 
-        function checkedValues(name) {
-          return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
-            return input.value;
-          });
-        }
+    if (growth.includes('reference')) areas.push('Practice reference interviews and research consultations.');
+    if (growth.includes('instruction')) areas.push('Explore information literacy instruction and lesson design.');
+    if (growth.includes('cataloging')) areas.push('Learn basic cataloging, metadata, controlled vocabularies, and description standards.');
+    if (growth.includes('collections')) areas.push('Explore collection development, weeding, licensing, and community-responsive collections.');
+    if (growth.includes('archives')) areas.push('Learn archival arrangement, description, preservation, and donor/community relations.');
+    if (growth.includes('assessment')) areas.push('Build comfort with surveys, usage data, outcomes, and service assessment.');
+    if (growth.includes('management')) areas.push('Develop supervision, budgeting, planning, and change-management language.');
 
-        function radioValue(name) {
-          const selected = document.querySelector('input[name="' + name + '"]:checked');
-          return selected ? selected.value : '';
-        }
+    if (setting === 'academic') areas.push('Learn about information literacy, liaison work, scholarly communication, and student success.');
+    if (setting === 'public') areas.push('Explore programming, readers advisory, community partnerships, and inclusive public service.');
+    if (setting === 'school') areas.push('Explore youth services, curriculum support, school library standards, and student learning.');
+    if (setting === 'archives') areas.push('Explore archival ethics, description, preservation, access, and community archives.');
+    if (setting === 'health') areas.push('Explore evidence-based practice, health information literacy, and database searching.');
+    if (setting === 'law-government') areas.push('Explore legal or government information, policy research, records, and specialized reference.');
 
-        function unique(items) {
-          return Array.from(new Set(items));
-        }
+    if (mlis === 'considering' || mlis === 'no') {
+      areas.push('Look at job descriptions for roles that interest you and compare required qualifications with preferred qualifications.');
+    }
 
-        function list(items) {
-          return items.map(function (item) {
-            return '<li>' + item + '</li>';
-          }).join('');
-        }
+    return unique(areas);
+  }
 
-        function buildStrengths(fields, skills) {
-          let strengths = [];
+  function buildInterviewTalkingPoints(skills, setting) {
+    let points = [];
 
-          if (skills.includes('service')) strengths.push('Public service and user-centered support');
-          if (skills.includes('teaching')) strengths.push('Instruction, training, and learning support');
-          if (skills.includes('supervision')) strengths.push('Personnel coordination and leadership');
-          if (skills.includes('projects')) strengths.push('Project management and workflow planning');
-          if (skills.includes('research')) strengths.push('Research support and information-seeking skills');
-          if (skills.includes('writing')) strengths.push('Clear communication and documentation');
-          if (skills.includes('events')) strengths.push('Programming and outreach');
-          if (skills.includes('technology')) strengths.push('Technology support and digital troubleshooting');
-          if (skills.includes('outreach')) strengths.push('Community engagement and partnership-building');
-          if (skills.includes('records')) strengths.push('Information organization and records management');
+    if (skills.includes('service')) points.push('My background in public-facing work prepared me to listen carefully, clarify needs, and help people feel welcome.');
+    if (skills.includes('teaching')) points.push('My teaching or training experience helps me explain complex information in approachable ways.');
+    if (skills.includes('research')) points.push('My research experience helps me support users as they define questions, search strategically, and evaluate sources.');
+    if (skills.includes('technology')) points.push('My technology experience helps me troubleshoot problems and support digital literacy without making users feel judged.');
+    if (skills.includes('outreach')) points.push('My outreach experience helps me build trust, create partnerships, and connect services to community needs.');
+    if (skills.includes('records')) points.push('My experience organizing information translates directly to libraries because access depends on clear systems.');
+    if (skills.includes('projects')) points.push('My project coordination experience helps me manage timelines, communication, and follow-through.');
+    if (skills.includes('writing')) points.push('My writing and communication experience helps me make information clearer and more usable.');
 
-          if (fields.includes('education')) strengths.push('Experience helping people learn');
-          if (fields.includes('healthcare')) strengths.push('Care-centered service and confidentiality awareness');
-          if (fields.includes('technology')) strengths.push('Comfort with systems, tools, and technical problem-solving');
-          if (fields.includes('nonprofit')) strengths.push('Mission-driven community work');
-          if (fields.includes('arts')) strengths.push('Cultural heritage, interpretation, and creative programming');
+    if (setting === 'academic') points.push('I am interested in academic libraries because they combine teaching, research support, and student-centered service.');
+    if (setting === 'public') points.push('I am interested in public libraries because they connect people with information, technology, programs, and community support.');
+    if (setting === 'archives') points.push('I am interested in archives because preserving context and access helps communities shape how their histories are remembered.');
+    if (setting === 'school') points.push('I am interested in school libraries because they support student learning, curiosity, and equitable access to information.');
+    if (setting === 'health') points.push('I am interested in health sciences libraries because they connect people with evidence-based information that supports care, learning, and decision-making.');
+    if (setting === 'law-government') points.push('I am interested in law or government libraries because they support access to specialized information, public records, policy, and research.');
 
-          return unique(strengths);
-        }
+    return unique(points);
+  }
 
-        function buildTranslations(skills) {
-          let translations = [];
+  function buildProfessionalDevelopment(setting, growth, mlis) {
+    let pd = [];
 
-          if (skills.includes('service')) translations.push('<strong>Customer service</strong> becomes <strong>public services, patron support, and reference desk readiness</strong>.');
-          if (skills.includes('teaching')) translations.push('<strong>Teaching or training</strong> becomes <strong>library instruction, information literacy, and workshop facilitation</strong>.');
-          if (skills.includes('supervision')) translations.push('<strong>Supervising staff</strong> becomes <strong>personnel management, student worker supervision, and team coordination</strong>.');
-          if (skills.includes('projects')) translations.push('<strong>Project management</strong> becomes <strong>program coordination, implementation planning, and assessment follow-through</strong>.');
-          if (skills.includes('research')) translations.push('<strong>Research experience</strong> becomes <strong>reference, research consultation, and information discovery support</strong>.');
-          if (skills.includes('writing')) translations.push('<strong>Writing and communications</strong> becomes <strong>guides, documentation, outreach, web content, and instructional materials</strong>.');
-          if (skills.includes('events')) translations.push('<strong>Event planning</strong> becomes <strong>library programming, outreach events, exhibits, and community engagement</strong>.');
-          if (skills.includes('technology')) translations.push('<strong>Technology support</strong> becomes <strong>digital literacy, troubleshooting, makerspace support, and emerging technology services</strong>.');
-          if (skills.includes('outreach')) translations.push('<strong>Community outreach</strong> becomes <strong>liaison work, partnerships, engagement, and inclusive services</strong>.');
-          if (skills.includes('records')) translations.push('<strong>Records or file management</strong> becomes <strong>metadata thinking, information organization, archives, and collection stewardship</strong>.');
+    pd.push('Review librarian job postings and highlight repeated skills, tools, and responsibilities.');
+    pd.push('Conduct informational interviews with librarians in settings that interest you.');
+    pd.push('Translate your existing experience into library language on your resume and cover letters.');
 
-          return translations;
-        }
+    if (mlis === 'student') pd.push('Use class projects to build portfolio examples connected to the library setting you want.');
+    if (mlis === 'considering' || mlis === 'no') pd.push('Compare paraprofessional, library assistant, and MLIS-required roles to understand possible entry points.');
 
-        function buildResumeBullets(skills, setting) {
-          let bullets = [];
+    if (setting === 'academic') pd.push('Explore instruction, reference, student success, and liaison librarianship.');
+    if (setting === 'public') pd.push('Explore programming, outreach, technology help, and community partnerships.');
+    if (setting === 'archives') pd.push('Explore community archives, metadata, preservation, and archival description.');
+    if (setting === 'school') pd.push('Explore youth services, curriculum support, school library standards, and student learning.');
+    if (growth.includes('cataloging')) pd.push('Try a short metadata or cataloging workshop.');
+    if (growth.includes('instruction')) pd.push('Build one sample lesson plan, workshop outline, or research guide.');
+    if (growth.includes('assessment')) pd.push('Practice turning service stories into measurable outcomes.');
 
-          if (skills.includes('service')) bullets.push('Provided responsive, user-centered support to diverse communities in high-volume service environments.');
-          if (skills.includes('teaching')) bullets.push('Designed and delivered instruction, training, or learning support tailored to varied experience levels.');
-          if (skills.includes('research')) bullets.push('Assisted users with locating, evaluating, and applying information to meet practical or academic needs.');
-          if (skills.includes('projects')) bullets.push('Coordinated projects from planning through completion, balancing timelines, communication, and stakeholder needs.');
-          if (skills.includes('technology')) bullets.push('Supported users with technology tools, troubleshooting, and digital workflows.');
-          if (skills.includes('events')) bullets.push('Planned and facilitated programs, events, or workshops that supported community learning and engagement.');
-          if (skills.includes('records')) bullets.push('Organized records, files, or data using consistent systems to improve access, retrieval, and continuity.');
-          if (skills.includes('outreach')) bullets.push('Built relationships with community partners and connected users with relevant resources and services.');
+    return unique(pd);
+  }
 
-          if (setting === 'academic') bullets.push('Connected users with research support, learning resources, and academic success services.');
-          if (setting === 'public') bullets.push('Supported welcoming, inclusive public services for users with a wide range of needs and goals.');
-          if (setting === 'archives') bullets.push('Helped preserve, describe, or contextualize materials for long-term access and use.');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-          return unique(bullets);
-        }
+    const fields = checkedValues('field');
+    const skills = checkedValues('skills');
+    const setting = radioValue('setting');
+    const growth = checkedValues('growth');
+    const mlis = radioValue('mlis');
 
-        function buildGrowthAreas(growth, setting, mlis) {
-          let areas = [];
+    if (fields.length === 0 || skills.length === 0) {
+      output.hidden = false;
+      output.innerHTML =
+        '<section class="content-card"><p><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</p></section>';
+      return;
+    }
 
-          if (growth.includes('reference')) areas.push('Practice reference interviews and research consultations.');
-          if (growth.includes('instruction')) areas.push('Explore information literacy instruction and lesson design.');
-          if (growth.includes('cataloging')) areas.push('Learn basic cataloging, metadata, controlled vocabularies, and description standards.');
-          if (growth.includes('collections')) areas.push('Explore collection development, weeding, licensing, and community-responsive collections.');
-          if (growth.includes('archives')) areas.push('Learn archival arrangement, description, preservation, and donor/community relations.');
-          if (growth.includes('assessment')) areas.push('Build comfort with surveys, usage data, outcomes, and service assessment.');
-          if (growth.includes('management')) areas.push('Develop supervision, budgeting, planning, and change-management language.');
+    const strengths = buildStrengths(fields, skills);
+    const translations = buildTranslations(skills);
+    const bullets = buildResumeBullets(skills, setting);
+    const growthAreas = buildGrowthAreas(growth, setting, mlis);
+    const talkingPoints = buildInterviewTalkingPoints(skills, setting);
+    const pd = buildProfessionalDevelopment(setting, growth, mlis);
 
-          if (setting === 'academic') areas.push('Learn about information literacy, liaison work, scholarly communication, and student success.');
-          if (setting === 'public') areas.push('Explore programming, readers advisory, community partnerships, and inclusive public service.');
-          if (setting === 'school') areas.push('Explore youth services, curriculum support, school library standards, and student learning.');
-          if (setting === 'archives') areas.push('Explore archival ethics, description, preservation, access, and community archives.');
-          if (setting === 'health') areas.push('Explore evidence-based practice, health information literacy, and database searching.');
-          if (setting === 'law-government') areas.push('Explore legal or government information, policy research, records, and specialized reference.');
+    output.hidden = false;
 
-          if (mlis === 'considering' || mlis === 'no') areas.push('Look at job descriptions for roles that interest you and compare required qualifications with preferred qualifications.');
+    output.innerHTML = `
+      <section class="content-card">
+        <p>
+          <strong>Your experience counts.</strong> The goal is not to erase your previous career.
+          The goal is to translate it into library language.
+        </p>
+      </section>
 
-          return unique(areas);
-        }
+      <div class="further-reading">
+        <h3>Your Existing Strengths</h3>
+        <ul>${list(strengths)}</ul>
+      </div>
 
-        function buildInterviewTalkingPoints(skills, setting) {
-          let points = [];
+      <div class="further-reading">
+        <h3>How Libraries Describe Those Skills</h3>
+        <ul>${list(translations)}</ul>
+      </div>
 
-          if (skills.includes('service')) points.push('My background in public-facing work prepared me to listen carefully, clarify needs, and help people feel welcome.');
-          if (skills.includes('teaching')) points.push('My teaching or training experience helps me explain complex information in approachable ways.');
-          if (skills.includes('research')) points.push('My research experience helps me support users as they define questions, search strategically, and evaluate sources.');
-          if (skills.includes('technology')) points.push('My technology experience helps me troubleshoot problems and support digital literacy without making users feel judged.');
-          if (skills.includes('outreach')) points.push('My outreach experience helps me build trust, create partnerships, and connect services to community needs.');
-          if (skills.includes('records')) points.push('My experience organizing information translates directly to libraries because access depends on clear systems.');
-          if (skills.includes('projects')) points.push('My project coordination experience helps me manage timelines, communication, and follow-through.');
-          if (skills.includes('writing')) points.push('My writing and communication experience helps me make information clearer and more usable.');
+      <div class="further-reading">
+        <h3>Resume Language You Can Adapt</h3>
+        <ul>${list(bullets)}</ul>
+      </div>
 
-          if (setting === 'academic') points.push('I am interested in academic libraries because they combine teaching, research support, and student-centered service.');
-          if (setting === 'public') points.push('I am interested in public libraries because they connect people with information, technology, programs, and community support.');
-          if (setting === 'archives') points.push('I am interested in archives because preserving context and access helps communities shape how their histories are remembered.');
-          if (setting === 'school') points.push('I am interested in school libraries because they support student learning, curiosity, and equitable access to information.');
-          if (setting === 'health') points.push('I am interested in health sciences libraries because they connect people with evidence-based information that supports care, learning, and decision-making.');
-          if (setting === 'law-government') points.push('I am interested in law or government libraries because they support access to specialized information, public records, policy, and research.');
+      <div class="further-reading">
+        <h3>Recommended Areas to Explore</h3>
+        <ul>${list(growthAreas)}</ul>
+      </div>
 
-          return unique(points);
-        }
+      <div class="further-reading">
+        <h3>Professional Development Ideas</h3>
+        <ul>${list(pd)}</ul>
+      </div>
 
-        function buildProfessionalDevelopment(setting, growth, mlis) {
-          let pd = [];
+      <div class="further-reading">
+        <h3>Interview Talking Points</h3>
+        <ul>${list(talkingPoints)}</ul>
+      </div>
+    `;
+  });
 
-          pd.push('Review librarian job postings and highlight repeated skills, tools, and responsibilities.');
-          pd.push('Conduct informational interviews with librarians in settings that interest you.');
-          pd.push('Translate your existing experience into library language on your resume and cover letters.');
-
-          if (mlis === 'student') pd.push('Use class projects to build portfolio examples connected to the library setting you want.');
-          if (mlis === 'considering' || mlis === 'no') pd.push('Compare paraprofessional, library assistant, and MLIS-required roles to understand possible entry points.');
-
-          if (setting === 'academic') pd.push('Explore instruction, reference, student success, and liaison librarianship.');
-          if (setting === 'public') pd.push('Explore programming, outreach, technology help, and community partnerships.');
-          if (setting === 'archives') pd.push('Explore community archives, metadata, preservation, and archival description.');
-          if (setting === 'school') pd.push('Explore youth services, curriculum support, school library standards, and student learning.');
-          if (growth.includes('cataloging')) pd.push('Try a short metadata or cataloging workshop.');
-          if (growth.includes('instruction')) pd.push('Build one sample lesson plan, workshop outline, or research guide.');
-          if (growth.includes('assessment')) pd.push('Practice turning service stories into measurable outcomes.');
-
-          return unique(pd);
-        }
-
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-
-          const fields = checkedValues('field');
-          const skills = checkedValues('skills');
-          const setting = radioValue('setting');
-          const growth = checkedValues('growth');
-          const mlis = radioValue('mlis');
-
-          if (fields.length === 0 || skills.length === 0) {
-            output.hidden = false;
-            output.innerHTML = '<div class="translation-callout"><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</div>';
-            return;
-          }
-
-          const strengths = buildStrengths(fields, skills);
-          const translations = buildTranslations(skills);
-          const bullets = buildResumeBullets(skills, setting);
-          const growthAreas = buildGrowthAreas(growth, setting, mlis);
-          const talkingPoints = buildInterviewTalkingPoints(skills, setting);
-          const pd = buildProfessionalDevelopment(setting, growth, mlis);
-
-          output.hidden = false;
-
-          output.innerHTML = `
-            <div class="translation-callout">
-              <strong>Your experience counts.</strong> The goal is not to erase your previous career. The goal is to translate it into library language.
-            </div>
-
-            <div class="translation-grid">
-              <div class="translation-card">
-                <h3>Your Existing Strengths</h3>
-                <ul>${list(strengths)}</ul>
-              </div>
-
-              <div class="translation-card">
-                <h3>How Libraries Describe Those Skills</h3>
-                <ul>${list(translations)}</ul>
-              </div>
-
-              <div class="translation-card">
-                <h3>Resume Language You Can Adapt</h3>
-                <ul>${list(bullets)}</ul>
-              </div>
-
-              <div class="translation-card">
-                <h3>Recommended Areas to Explore</h3>
-                <ul>${list(growthAreas)}</ul>
-              </div>
-
-              <div class="translation-card">
-                <h3>Professional Development Ideas</h3>
-                <ul>${list(pd)}</ul>
-              </div>
-
-              <div class="translation-card">
-                <h3>Interview Talking Points</h3>
-                <ul>${list(talkingPoints)}</ul>
-              </div>
-            </div>
-          `;
-        });
-
-        resetButton.addEventListener('click', function () {
-          form.reset();
-          output.hidden = true;
-          output.innerHTML = '';
-        });
-      })();
-    </script>
+  resetButton.addEventListener('click', function () {
+    form.reset();
+    output.hidden = true;
+    output.innerHTML = '';
+  });
+})();
+</script>
   </body>
 </html>
