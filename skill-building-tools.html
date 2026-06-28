@@ -263,7 +263,489 @@
 
           <div id="job-decoder-output" aria-live="polite" hidden></div>
         </article>
+<article class="article-section" id="career-resilience-planner">
+  <p class="reflection-label">Interactive Tool</p>
 
+  <h2>Build Your Career Resilience Plan</h2>
+
+  <p>
+    Answer a few questions to generate a personalized roadmap through the toolkit.
+    This planner recommends specific reflection tools, interactive tools, topic pages,
+    and next steps based on what you are navigating right now.
+  </p>
+
+  <form id="resilience-planner-form">
+    <div class="further-reading">
+      <h3>1. Which best describes you?</h3>
+
+      <label><input name="plannerStage" type="radio" value="mlis-student" required> MLIS student</label><br>
+      <label><input name="plannerStage" type="radio" value="recent-graduate"> Recent graduate</label><br>
+      <label><input name="plannerStage" type="radio" value="career-changer"> Career changer</label><br>
+      <label><input name="plannerStage" type="radio" value="library-staff"> Library staff</label><br>
+      <label><input name="plannerStage" type="radio" value="emerging"> Emerging librarian, 0–2 years</label><br>
+      <label><input name="plannerStage" type="radio" value="early-career"> Early-career librarian, 3–5 years</label>
+    </div>
+
+    <div class="further-reading">
+      <h3>2. What kind of position are you currently in?</h3>
+
+      <label><input name="plannerPosition" type="radio" value="searching" required> Looking for my first librarian job</label><br>
+      <label><input name="plannerPosition" type="radio" value="temporary"> Temporary or contingent appointment</label><br>
+      <label><input name="plannerPosition" type="radio" value="permanent"> Permanent librarian position</label><br>
+      <label><input name="plannerPosition" type="radio" value="staff"> Library staff position</label><br>
+      <label><input name="plannerPosition" type="radio" value="unemployed"> Not currently employed</label><br>
+      <label><input name="plannerPosition" type="radio" value="multiple"> Multiple jobs or roles</label>
+    </div>
+
+    <div class="further-reading">
+      <h3>3. What are you navigating right now?</h3>
+      <p>Choose up to five.</p>
+
+      <label><input name="plannerChallenge" type="checkbox" value="rejection"> Repeated job rejection</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="job-fatigue"> Job search fatigue</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="financial"> Financial uncertainty</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="burnout"> Burnout</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="imposter"> Imposter syndrome</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="isolation"> Isolation</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="toxic-workplace"> Toxic workplace</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="supervisor"> Unsupportive supervisor</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="uncertainty"> Career uncertainty</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="teaching-anxiety"> Teaching anxiety</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="academia"> Navigating academia</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="publishing"> Publishing pressure</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="service-overload"> Service overload</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="leadership"> Leadership responsibilities</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="balance"> Work-life balance</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="moving"> Moving for jobs</label><br>
+      <label><input name="plannerChallenge" type="checkbox" value="contingent"> Contingent employment</label>
+    </div>
+
+    <div class="further-reading">
+      <h3>4. What do you need most right now?</h3>
+
+      <label><input name="plannerPriority" type="radio" value="job" required> Get a librarian job</label><br>
+      <label><input name="plannerPriority" type="radio" value="confidence"> Feel more confident</label><br>
+      <label><input name="plannerPriority" type="radio" value="burnout"> Recover from burnout</label><br>
+      <label><input name="plannerPriority" type="radio" value="identity"> Build professional identity</label><br>
+      <label><input name="plannerPriority" type="radio" value="community"> Build community</label><br>
+      <label><input name="plannerPriority" type="radio" value="career-plan"> Plan my career</label><br>
+      <label><input name="plannerPriority" type="radio" value="interviews"> Prepare for interviews</label><br>
+      <label><input name="plannerPriority" type="radio" value="translation"> Translate previous experience</label><br>
+      <label><input name="plannerPriority" type="radio" value="academia"> Understand academia</label>
+    </div>
+
+    <div class="further-reading">
+      <h3>5. What support do you already have?</h3>
+
+      <label><input name="plannerSupport" type="checkbox" value="mentor"> Mentor</label><br>
+      <label><input name="plannerSupport" type="checkbox" value="supervisor"> Supportive supervisor</label><br>
+      <label><input name="plannerSupport" type="checkbox" value="coworker"> Trusted coworker</label><br>
+      <label><input name="plannerSupport" type="checkbox" value="network"> Professional network</label><br>
+      <label><input name="plannerSupport" type="checkbox" value="friends-family"> Friends or family</label><br>
+      <label><input name="plannerSupport" type="checkbox" value="none"> None of these</label>
+    </div>
+
+    <p>
+      <button type="submit">Build my plan</button>
+      <button type="button" id="resilience-planner-reset">Reset</button>
+    </p>
+  </form>
+
+  <div id="resilience-planner-output" aria-live="polite" hidden></div>
+</article>
+
+<script>
+(function () {
+  const form = document.getElementById("resilience-planner-form");
+  const output = document.getElementById("resilience-planner-output");
+  const reset = document.getElementById("resilience-planner-reset");
+
+  if (!form || !output || !reset) return;
+
+  const resourceMap = {
+    rejection: {
+      title: "Repeated job rejection",
+      resources: [
+        ["Reflection Tool", "Rejection Recovery Worksheet", "reflection-tools.html#rejection-recovery"],
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"]
+      ],
+      reason: "You selected repeated rejection. These resources help separate rejection from self-worth and support more strategic job-search decisions.",
+      stop: "You do not need to treat every rejection as proof that you do not belong in librarianship.",
+      action: "Choose one recent rejection and complete the Rejection Recovery Worksheet before revising any application materials."
+    },
+
+    "job-fatigue": {
+      title: "Job search fatigue",
+      resources: [
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"]
+      ],
+      reason: "You selected job search fatigue. These resources help you narrow your effort instead of applying everywhere while exhausted.",
+      stop: "You do not need to apply to every possible job this month.",
+      action: "Pick one job posting and use the Job Description Decoder before deciding whether to apply."
+    },
+
+    financial: {
+      title: "Financial uncertainty",
+      resources: [
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"]
+      ],
+      reason: "You selected financial uncertainty. These resources help you prioritize material realities without turning them into personal failure.",
+      stop: "You do not need to make every career decision based only on prestige or institutional approval.",
+      action: "Make a short list of non-negotiables for your next role, such as salary, location, stability, or benefits."
+    },
+
+    burnout: {
+      title: "Burnout",
+      resources: [
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Reflection Tool", "Immediate Grounding Plan", "reflection-tools.html#immediate-grounding"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"]
+      ],
+      reason: "You selected burnout. These resources focus on capacity, recovery, and reducing self-abandonment.",
+      stop: "You do not need to respond to burnout by adding more professional development tasks.",
+      action: "Use the Reduced Capacity Work Plan to identify what can be delayed, simplified, or done imperfectly this week."
+    },
+
+    imposter: {
+      title: "Imposter syndrome",
+      resources: [
+        ["Reflection Tool", "Evidence of Competence Archive", "reflection-tools.html#competence-archive"],
+        ["Reflection Tool", "What Is Actually True?", "reflection-tools.html#what-is-true"],
+        ["Interactive Tool", "Professional Skills Translator", "#professional-skills-translator"],
+        ["Topic Page", "Confidence & Self-Efficacy", "confidence-self-efficacy.html"]
+      ],
+      reason: "You selected imposter syndrome. These resources help surface evidence of ability and translate experience into library language.",
+      stop: "You do not need to feel confident before you are allowed to recognize your competence.",
+      action: "Add five examples to your Evidence of Competence Archive before looking at another job posting."
+    },
+
+    isolation: {
+      title: "Isolation",
+      resources: [
+        ["Reflection Tool", "Relational Safety Mapping", "reflection-tools.html#relational-safety"],
+        ["Community Page", "Join Community", "community.html"],
+        ["Community Page", "Community Wisdom Archive", "community-wisdom.html"],
+        ["Topic Page", "Mentorship & Community", "mentorship-community.html"]
+      ],
+      reason: "You selected isolation. These resources help identify safer support and reduce professional loneliness.",
+      stop: "You do not need one person to meet every professional or emotional support need.",
+      action: "Use Relational Safety Mapping to identify one person who can offer practical support and one person who can offer emotional support."
+    },
+
+    "toxic-workplace": {
+      title: "Toxic workplace",
+      resources: [
+        ["Reflection Tool", "Relational Safety Mapping", "reflection-tools.html#relational-safety"],
+        ["Reflection Tool", "Immediate Grounding Plan", "reflection-tools.html#immediate-grounding"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"],
+        ["Topic Page", "Mentorship & Community", "mentorship-community.html"]
+      ],
+      reason: "You selected a toxic workplace. These resources prioritize safety, support, and short-term stabilization.",
+      stop: "You do not need to solve a harmful workplace culture by becoming more personally resilient.",
+      action: "Identify one source of support outside your immediate workplace before deciding on your next step."
+    },
+
+    supervisor: {
+      title: "Unsupportive supervisor",
+      resources: [
+        ["Reflection Tool", "Relational Safety Mapping", "reflection-tools.html#relational-safety"],
+        ["Reflection Tool", "What Is Actually True?", "reflection-tools.html#what-is-true"],
+        ["Topic Page", "Mentorship & Community", "mentorship-community.html"]
+      ],
+      reason: "You selected an unsupportive supervisor. These resources help identify alternative support and reality-check workplace dynamics.",
+      stop: "You do not need your supervisor to be your only source of validation, mentoring, or professional interpretation.",
+      action: "Map who else can provide feedback, context, documentation advice, or emotional support."
+    },
+
+    uncertainty: {
+      title: "Career uncertainty",
+      resources: [
+        ["Reflection Tool", "Professional Identity Map", "reflection-tools.html#identity-map"],
+        ["Interactive Tool", "Professional Skills Translator", "#professional-skills-translator"],
+        ["Topic Page", "Professional Identity", "professional-identity.html"]
+      ],
+      reason: "You selected career uncertainty. These resources help clarify values, direction, and emerging librarian identity.",
+      stop: "You do not need to have a five-year plan before taking the next useful step.",
+      action: "Complete the Professional Identity Map and identify one value you want your next professional decision to honor."
+    },
+
+    "teaching-anxiety": {
+      title: "Teaching anxiety",
+      resources: [
+        ["Reflection Tool", "What Is Actually True?", "reflection-tools.html#what-is-true"],
+        ["Reflection Tool", "Evidence of Competence Archive", "reflection-tools.html#competence-archive"],
+        ["Topic Page", "Confidence & Self-Efficacy", "confidence-self-efficacy.html"]
+      ],
+      reason: "You selected teaching anxiety. These resources help separate fear from evidence and identify teaching-adjacent strengths.",
+      stop: "You do not need every teaching session to feel smooth for it to be useful.",
+      action: "Write down one thing learners needed, one thing you did to support them, and one thing you would adjust next time."
+    },
+
+    academia: {
+      title: "Navigating academia",
+      resources: [
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Reflection Tool", "Professional Identity Map", "reflection-tools.html#identity-map"],
+        ["Topic Page", "Professional Identity", "professional-identity.html"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"]
+      ],
+      reason: "You selected navigating academia. These resources help decode institutional language and clarify how you want to inhabit academic librarianship.",
+      stop: "You do not need to adopt every academic norm uncritically in order to belong.",
+      action: "Use the Job Description Decoder on one academic library posting and note which expectations are required, preferred, or unclear."
+    },
+
+    publishing: {
+      title: "Publishing pressure",
+      resources: [
+        ["Reflection Tool", "What Is Actually True?", "reflection-tools.html#what-is-true"],
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"],
+        ["Topic Page", "Professional Identity", "professional-identity.html"]
+      ],
+      reason: "You selected publishing pressure. These resources help distinguish real expectations from imagined urgency.",
+      stop: "You do not need to publish immediately just because others appear to be doing so.",
+      action: "Identify whether publishing is required, preferred, encouraged, or self-imposed in your current situation."
+    },
+
+    "service-overload": {
+      title: "Service overload",
+      resources: [
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Reflection Tool", "Relational Safety Mapping", "reflection-tools.html#relational-safety"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"]
+      ],
+      reason: "You selected service overload. These resources help identify boundaries and support.",
+      stop: "You do not need to say yes to every opportunity to prove commitment.",
+      action: "List your current commitments and mark which are required, optional, strategic, or draining."
+    },
+
+    leadership: {
+      title: "Leadership responsibilities",
+      resources: [
+        ["Reflection Tool", "Professional Identity Map", "reflection-tools.html#identity-map"],
+        ["Reflection Tool", "Evidence of Competence Archive", "reflection-tools.html#competence-archive"],
+        ["Topic Page", "Professional Identity", "professional-identity.html"],
+        ["Topic Page", "Confidence & Self-Efficacy", "confidence-self-efficacy.html"]
+      ],
+      reason: "You selected leadership responsibilities. These resources help connect leadership to values, strengths, and evidence of competence.",
+      stop: "You do not need to lead perfectly to be learning leadership.",
+      action: "Identify one leadership strength you already use and one leadership skill you want to practice intentionally."
+    },
+
+    balance: {
+      title: "Work-life balance",
+      resources: [
+        ["Reflection Tool", "Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+        ["Reflection Tool", "Immediate Grounding Plan", "reflection-tools.html#immediate-grounding"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"]
+      ],
+      reason: "You selected work-life balance. These resources focus on boundaries and sustainable capacity.",
+      stop: "You do not need to be available all the time to be a dedicated professional.",
+      action: "Choose one boundary to practice this week, such as stopping at a set time or delaying non-urgent email."
+    },
+
+    moving: {
+      title: "Moving for jobs",
+      resources: [
+        ["Reflection Tool", "What Is Actually True?", "reflection-tools.html#what-is-true"],
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"]
+      ],
+      reason: "You selected moving for jobs. These resources help weigh material realities, not just professional pressure.",
+      stop: "You do not need to treat relocation as automatically reasonable just because the profession normalizes it.",
+      action: "Write down the material, relational, financial, and emotional costs of moving before evaluating a position."
+    },
+
+    contingent: {
+      title: "Contingent employment",
+      resources: [
+        ["Reflection Tool", "Rejection Recovery Worksheet", "reflection-tools.html#rejection-recovery"],
+        ["Interactive Tool", "Job Description Decoder", "#job-description-decoder"],
+        ["Topic Page", "Job Searching & Rejection", "job-searching-rejection.html"],
+        ["Topic Page", "Burnout & Recovery", "burnout-recovery.html"]
+      ],
+      reason: "You selected contingent employment. These resources name structural precarity and support next-step planning.",
+      stop: "You do not need to interpret contingent work as evidence that you are professionally disposable.",
+      action: "Identify what your current role is helping you build and what it is costing you."
+    }
+  };
+
+  const priorityMap = {
+    job: ["Job Description Decoder", "#job-description-decoder"],
+    confidence: ["Evidence of Competence Archive", "reflection-tools.html#competence-archive"],
+    burnout: ["Reduced Capacity Work Plan", "reflection-tools.html#reduced-capacity"],
+    identity: ["Professional Identity Map", "reflection-tools.html#identity-map"],
+    community: ["Relational Safety Mapping", "reflection-tools.html#relational-safety"],
+    "career-plan": ["Professional Identity", "professional-identity.html"],
+    interviews: ["Job Description Decoder", "#job-description-decoder"],
+    translation: ["Professional Skills Translator", "#professional-skills-translator"],
+    academia: ["Job Description Decoder", "#job-description-decoder"]
+  };
+
+  function getRadio(name) {
+    const selected = document.querySelector('input[name="' + name + '"]:checked');
+    return selected ? selected.value : "";
+  }
+
+  function checkedValues(name) {
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
+      return input.value;
+    });
+  }
+
+  function uniqueByTitle(items) {
+    const seen = {};
+    return items.filter(function (item) {
+      const key = item[1];
+      if (seen[key]) return false;
+      seen[key] = true;
+      return true;
+    });
+  }
+
+  function list(items) {
+    return items.map(function (item) {
+      return "<li>" + item + "</li>";
+    }).join("");
+  }
+
+  function resourceList(items) {
+    return items.map(function (item) {
+      return '<li><strong>' + item[0] + ':</strong> <a href="' + item[2] + '">' + item[1] + '</a></li>';
+    }).join("");
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const stage = getRadio("plannerStage");
+    const position = getRadio("plannerPosition");
+    const priority = getRadio("plannerPriority");
+    const supports = checkedValues("plannerSupport");
+    let challenges = checkedValues("plannerChallenge").slice(0, 5);
+
+    if (challenges.length === 0) {
+      output.hidden = false;
+      output.innerHTML = '<section class="content-card"><p><strong>Almost there:</strong> Choose at least one challenge so the planner can recommend relevant toolkit resources.</p></section>';
+      return;
+    }
+
+    let selected = challenges.map(function (challenge) {
+      return resourceMap[challenge];
+    }).filter(Boolean);
+
+    let resources = [];
+    let reasons = [];
+    let actions = [];
+    let stops = [];
+
+    selected.forEach(function (item) {
+      resources = resources.concat(item.resources);
+      reasons.push(item.reason);
+      actions.push(item.action);
+      stops.push(item.stop);
+    });
+
+    if (priorityMap[priority]) {
+      resources.unshift(["Priority Resource", priorityMap[priority][0], priorityMap[priority][1]]);
+    }
+
+    resources = uniqueByTitle(resources).slice(0, 8);
+
+    const startHere = resources.slice(0, 3);
+    const nextActions = actions.slice(0, 3);
+    const stopWorrying = stops.slice(0, 3);
+
+    let landscape = "You are navigating " + selected.map(function (item) {
+      return item.title.toLowerCase();
+    }).join(", ") + ". ";
+
+    if (position === "temporary" || position === "contingent") {
+      landscape += "Your situation includes employment precarity, so your plan should balance professional growth with stability and energy protection.";
+    } else if (position === "searching" || position === "unemployed") {
+      landscape += "Your situation includes job-search pressure, so your plan should focus on strategic applications, confidence, and material realities.";
+    } else {
+      landscape += "Your plan should focus on targeted support, sustainable growth, and resources that match your current pressure points.";
+    }
+
+    let supportPlan = [];
+
+    if (supports.includes("none")) {
+      supportPlan.push("Prioritize building one source of professional support this month, such as an informational interview, peer group, online community, or professional association connection.");
+    } else {
+      supportPlan.push("Use the support you already have intentionally. Ask different people for different kinds of help: feedback, emotional support, context, accountability, or job-search advice.");
+    }
+
+    if (!supports.includes("mentor")) {
+      supportPlan.push("Consider looking for a mentor or near-peer conversation partner, especially around the challenge that feels most urgent.");
+    }
+
+    supportPlan.push("You do not need one perfect mentor. A small network of partial supports is often more realistic and more sustainable.");
+
+    output.hidden = false;
+
+    output.innerHTML = `
+      <section class="content-card">
+        <p>
+          <strong>Your Current Landscape:</strong> ${landscape}
+        </p>
+      </section>
+
+      <div class="further-reading">
+        <h3>Start Here</h3>
+        <p>Begin with these toolkit resources first.</p>
+        <ol>${resourceList(startHere)}</ol>
+      </div>
+
+      <div class="further-reading">
+        <h3>Why These Resources?</h3>
+        <ul>${list(reasons.slice(0, 4))}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Suggested Toolkit Roadmap</h3>
+        <ol>${resourceList(resources)}</ol>
+      </div>
+
+      <div class="further-reading">
+        <h3>One to Three Things to Do This Week</h3>
+        <ul>${list(nextActions)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Support Plan</h3>
+        <ul>${list(supportPlan)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>What You Can Stop Worrying About This Month</h3>
+        <ul>${list(stopWorrying)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Structural Reality Check</h3>
+        <p>
+          Many early-career challenges are shaped by hiring systems, contingent labor,
+          institutional expectations, unclear mentoring, and uneven access to professional
+          opportunities. This plan offers actions you can take, but it does not frame those
+          structural realities as personal failure.
+        </p>
+      </div>
+    `;
+  });
+
+  reset.addEventListener("click", function () {
+    form.reset();
+    output.hidden = true;
+    output.innerHTML = "";
+  });
+})();
+</script>
 
         <section class="reflection" id="reflection">
           <p class="reflection-label">A Note on Use</p>
