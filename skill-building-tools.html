@@ -115,10 +115,10 @@
         <article class="article-section" id="tools-overview">
           <h2>Choose a Tool</h2>
 
-       <div class="related-grid">
-  <a href="#job-description-decoder">Job Description Decoder</a>
-  <a href="#professional-skills-translator">Professional Skills Translator</a>
-</div>
+          <div class="related-grid">
+            <a href="#professional-skills-translator">Professional Skills Translator</a>
+            <a href="#job-description-decoder">Job Description Decoder</a>
+          </div>
         </article>
 
         <article class="article-section" id="professional-skills-translator">
@@ -202,6 +202,69 @@
           <div id="career-translator-output" aria-live="polite" hidden></div>
         </article>
 
+
+        <article class="article-section" id="job-description-decoder">
+          <p class="reflection-label">Interactive Tool</p>
+
+          <h2>Job Description Decoder</h2>
+
+          <p>
+            Paste a library job description to identify repeated themes, required
+            and preferred language, common responsibility patterns, and questions
+            to research before applying.
+          </p>
+
+          <p>
+            This tool does not decide whether you are qualified. It is a transparent,
+            browser-based reading aid that helps you slow down and interpret a
+            posting more strategically.
+          </p>
+
+          <form id="job-decoder-form">
+            <div class="further-reading">
+              <h3>1. Paste the job description</h3>
+
+              <textarea
+                id="job-description-text"
+                rows="14"
+                required
+                aria-label="Paste job description text"
+              ></textarea>
+            </div>
+
+            <div class="further-reading">
+              <h3>2. What type of library is this position in?</h3>
+
+              <label><input name="decoderLibraryType" type="radio" value="academic" required /> Academic library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="public" /> Public library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="school" /> School library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="archives" /> Archives / Special Collections</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="health" /> Health Sciences library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="law-government" /> Law / Government library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="unsure" /> Not sure</label>
+            </div>
+
+            <div class="further-reading">
+              <h3>3. Which best describes you?</h3>
+
+              <label><input name="decoderCareerStage" type="radio" value="mlis-student" required /> MLIS student</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="recent-graduate" /> Recent graduate</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="career-changer" /> Career changer</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="library-staff" /> Library staff</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="emerging" /> Emerging librarian, 0-2 years</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="early-career" /> Early-career librarian, 3-5 years</label>
+            </div>
+
+            <p>
+              <button type="submit">Decode job description</button>
+              <button type="button" id="job-decoder-reset">Reset</button>
+            </p>
+          </form>
+
+          <div id="job-decoder-output" aria-live="polite" hidden></div>
+        </article>
+
+
         <section class="reflection" id="reflection">
           <p class="reflection-label">A Note on Use</p>
 
@@ -231,6 +294,7 @@
         <nav class="sidebar-links" aria-label="Skill-building tools page navigation">
           <a href="#tools-overview">Choose a Tool</a>
           <a href="#professional-skills-translator">Professional Skills Translator</a>
+          <a href="#job-description-decoder">Job Description Decoder</a>
           <a href="#reflection">A Note on Use</a>
         </nav>
       </aside>
@@ -465,5 +529,427 @@
   });
 })();
 </script>
+  
+<script>
+(function () {
+  const form = document.getElementById("job-decoder-form");
+  const output = document.getElementById("job-decoder-output");
+  const reset = document.getElementById("job-decoder-reset");
+
+  if (!form || !output || !reset) return;
+
+  const categories = [
+    {
+      name: "Teaching and instruction",
+      patterns: [
+        /\binstruction\b/gi,
+        /\binformation literacy\b/gi,
+        /\bteach(?:es|ing)?\b/gi,
+        /\bworkshops?\b/gi,
+        /\bcurriculum\b/gi,
+        /\blesson(?:s)?\b/gi
+      ],
+      explanation: "This posting appears to include teaching, workshop, or learning-support responsibilities.",
+      prepare: "Prepare one example of teaching, training, tutoring, presenting, or helping someone understand something complex."
+    },
+    {
+      name: "Reference and research support",
+      patterns: [
+        /\breference\b/gi,
+        /\bresearch consultation(?:s)?\b/gi,
+        /\bresearch support\b/gi,
+        /\bdatabase(?:s)?\b/gi,
+        /\bsearch strateg(?:y|ies)\b/gi,
+        /\bliterature search(?:es)?\b/gi
+      ],
+      explanation: "This posting appears to expect support for users doing research or information-seeking.",
+      prepare: "Prepare one example of helping someone clarify a question, find information, or evaluate sources."
+    },
+    {
+      name: "Public service",
+      patterns: [
+        /\bpublic service\b/gi,
+        /\bpatron(?:s)?\b/gi,
+        /\buser service(?:s)?\b/gi,
+        /\bcustomer service\b/gi,
+        /\bservice desk\b/gi,
+        /\bcirculation\b/gi
+      ],
+      explanation: "This posting appears to value direct, user-centered service.",
+      prepare: "Prepare one example of helping someone under pressure or navigating a complex service interaction."
+    },
+    {
+      name: "Outreach and collaboration",
+      patterns: [
+        /\boutreach\b/gi,
+        /\bprogramming\b/gi,
+        /\bevents?\b/gi,
+        /\bengagement\b/gi,
+        /\bpartnership(?:s)?\b/gi,
+        /\bliaison\b/gi,
+        /\bcollaborat(?:e|es|ed|ion|ive)\b/gi
+      ],
+      explanation: "This posting appears to emphasize relationship-building and work beyond an individual desk or department.",
+      prepare: "Prepare one example of collaboration, outreach, event planning, or partnership-building."
+    },
+    {
+      name: "Equity, inclusion, and accessibility",
+      patterns: [
+        /\bequity\b/gi,
+        /\bdiversity\b/gi,
+        /\binclusion\b/gi,
+        /\baccessibility\b/gi,
+        /\binclusive\b/gi,
+        /\bbelonging\b/gi,
+        /\bunderserved\b/gi,
+        /\bDEI\b/g,
+        /\banti-racist\b/gi
+      ],
+      explanation: "This posting appears to ask for thoughtful attention to access, representation, and barriers to participation.",
+      prepare: "Prepare one concrete example of making a service, space, lesson, collection, or interaction more accessible or inclusive."
+    },
+    {
+      name: "Assessment and improvement",
+      patterns: [
+        /\bassessment\b/gi,
+        /\bevaluat(?:e|es|ed|ion)\b/gi,
+        /\bdata\b/gi,
+        /\boutcomes?\b/gi,
+        /\bsurveys?\b/gi,
+        /\bmetrics?\b/gi,
+        /\bimpact\b/gi
+      ],
+      explanation: "This posting appears to value evidence-informed improvement.",
+      prepare: "Prepare one example of using feedback, observation, data, or reflection to improve something."
+    },
+    {
+      name: "Collections and resources",
+      patterns: [
+        /\bcollection development\b/gi,
+        /\bcollections?\b/gi,
+        /\bweeding\b/gi,
+        /\bacquisitions?\b/gi,
+        /\blicens(?:e|ing)\b/gi,
+        /\bvendors?\b/gi
+      ],
+      explanation: "This posting appears to involve selecting, evaluating, promoting, or managing library resources.",
+      prepare: "Prepare to discuss how you would learn user needs and make thoughtful resource decisions."
+    },
+    {
+      name: "Technology and digital tools",
+      patterns: [
+        /\btechnology\b/gi,
+        /\bdigital\b/gi,
+        /\bsoftware\b/gi,
+        /\bsystems?\b/gi,
+        /\btroubleshoot(?:ing)?\b/gi,
+        /\bmakerspace\b/gi,
+        /\bweb\b/gi,
+        /\bonline learning\b/gi
+      ],
+      explanation: "This posting appears to expect comfort learning tools, supporting users, or troubleshooting technology.",
+      prepare: "Prepare one example of learning a tool, solving a technology problem, or helping someone else use technology."
+    },
+    {
+      name: "Metadata, cataloging, and organization",
+      patterns: [
+        /\bmetadata\b/gi,
+        /\bcatalog(?:ing)?\b/gi,
+        /\bclassification\b/gi,
+        /\bdescription\b/gi,
+        /\bcontrolled vocabular(?:y|ies)\b/gi,
+        /\bdiscovery\b/gi
+      ],
+      explanation: "This posting appears to involve organizing information so people can find, understand, and use it.",
+      prepare: "Prepare one example involving organizing information, improving findability, or working carefully with records or data."
+    },
+    {
+      name: "Archives and preservation",
+      patterns: [
+        /\barchives?\b/gi,
+        /\bspecial collections?\b/gi,
+        /\bpreservation\b/gi,
+        /\barrangement\b/gi,
+        /\bprocessing\b/gi,
+        /\bfinding aids?\b/gi
+      ],
+      explanation: "This posting appears to involve stewardship, description, context, access, or long-term care for materials.",
+      prepare: "Prepare one example involving context, description, preservation, historical materials, or ethical access."
+    },
+    {
+      name: "Leadership and project ownership",
+      patterns: [
+        /\bleadership\b/gi,
+        /\bsupervis(?:e|es|ed|ion)\b/gi,
+        /\bmanage(?:s|d|ment)?\b/gi,
+        /\bcommittees?\b/gi,
+        /\bteams?\b/gi,
+        /\bcoordinate(?:s|d|ion)?\b/gi,
+        /\bproject management\b/gi
+      ],
+      explanation: "This posting appears to value initiative, coordination, responsibility, or group work.",
+      prepare: "Prepare one example of leading, coordinating, supervising, or carrying a project from idea to completion."
+    }
+  ];
+
+  function getRadio(name) {
+    const selected = document.querySelector('input[name="' + name + '"]:checked');
+    return selected ? selected.value : "";
+  }
+
+  function findMatches(text, patterns) {
+    const matches = [];
+
+    patterns.forEach(function (pattern) {
+      const found = text.match(pattern);
+      if (found) {
+        found.forEach(function (item) {
+          matches.push(item);
+        });
+      }
+    });
+
+    return matches;
+  }
+
+  function countPhrase(text, pattern) {
+    const found = text.match(pattern);
+    return found ? found.length : 0;
+  }
+
+  function list(items) {
+    if (!items || items.length === 0) {
+      return "<li>No strong patterns detected. This may mean the posting uses different language.</li>";
+    }
+
+    return items.map(function (item) {
+      return "<li>" + item + "</li>";
+    }).join("");
+  }
+
+  function analyzeCategories(text) {
+    return categories.map(function (category) {
+      const matches = findMatches(text, category.patterns);
+      return {
+        name: category.name,
+        count: matches.length,
+        terms: Array.from(new Set(matches.map(function (item) {
+          return item.toLowerCase();
+        }))),
+        explanation: category.explanation,
+        prepare: category.prepare
+      };
+    }).filter(function (category) {
+      return category.count > 0;
+    }).sort(function (a, b) {
+      return b.count - a.count;
+    });
+  }
+
+  function analyzeRequiredPreferred(text) {
+    const requiredCount =
+      countPhrase(text, /\brequired qualifications?\b/gi) +
+      countPhrase(text, /\bminimum qualifications?\b/gi) +
+      countPhrase(text, /\bmust\b/gi) +
+      countPhrase(text, /\brequired\b/gi);
+
+    const preferredCount =
+      countPhrase(text, /\bpreferred qualifications?\b/gi) +
+      countPhrase(text, /\bpreferred\b/gi) +
+      countPhrase(text, /\bdesired\b/gi) +
+      countPhrase(text, /\bideal candidate\b/gi);
+
+    const notes = [];
+
+    if (requiredCount > 0) {
+      notes.push("The posting appears to use required or minimum qualification language. Treat those statements as the employer's stated baseline.");
+    } else {
+      notes.push("The posting does not clearly separate required qualifications, or it uses less obvious wording.");
+    }
+
+    if (preferredCount > 0) {
+      notes.push("The posting appears to use preferred or desired qualification language. Preferred qualifications can strengthen an application, but they are not always mandatory.");
+    } else {
+      notes.push("The posting does not clearly label preferred qualifications, or preferred skills may be mixed into the main description.");
+    }
+
+    notes.push("Do not assume you need to meet every preferred qualification before applying. Job ads are often wish lists.");
+
+    return notes;
+  }
+
+  function buildLibraryTypeNote(libraryType) {
+    const notes = {
+      academic: "Because this is an academic library role, look closely for instruction, student success, research support, liaison work, assessment, and campus collaboration.",
+      public: "Because this is a public library role, look closely for public service, programming, technology help, community partnerships, and inclusive access.",
+      school: "Because this is a school library role, look closely for student learning, curriculum support, youth services, and information literacy.",
+      archives: "Because this is an archives or special collections role, look closely for description, preservation, access, context, ethics, and stewardship.",
+      health: "Because this is a health sciences library role, look closely for evidence-based information, database searching, research support, and specialized users.",
+      "law-government": "Because this is a law or government library role, look closely for specialized reference, policy research, public records, legal information, or government documents.",
+      unsure: "Because the library type is unclear, focus on repeated responsibilities, verbs, and qualification patterns in the posting."
+    };
+
+    return notes[libraryType] || notes.unsure;
+  }
+
+  function buildCareerStageAdvice(careerStage) {
+    const advice = {
+      "mlis-student": [
+        "Use coursework, practica, internships, student work, and class projects as evidence when they connect to the posting.",
+        "You do not need paid experience for every theme, but you should be ready to explain how you are building relevant experience."
+      ],
+      "recent-graduate": [
+        "Translate recent academic work into professional examples instead of assuming it is too student-centered to count.",
+        "Look for class projects, assistantships, internships, volunteer work, and campus employment that connect to the posting."
+      ],
+      "career-changer": [
+        "Your strongest strategy is translation. The employer may not automatically see how your previous field connects to library work.",
+        "Look for transferable examples involving service, teaching, research, technology, outreach, project coordination, supervision, or information organization."
+      ],
+      "library-staff": [
+        "Use your staff experience to show readiness for librarian-level work.",
+        "Look for examples involving judgment, training, user support, workflow knowledge, systems thinking, leadership, or independent problem-solving."
+      ],
+      emerging: [
+        "Focus on concrete examples, growth, judgment, collaboration, and readiness.",
+        "You do not need to sound like a senior librarian. You need to show that you can learn, reflect, and contribute responsibly."
+      ],
+      "early-career": [
+        "Emphasize project ownership, specialization, leadership, collaboration, assessment, and professional trajectory.",
+        "Show not only what you have done, but how your professional judgment has developed."
+      ]
+    };
+
+    return advice[careerStage] || ["Focus on the clearest examples that connect your experience to the posting."];
+  }
+
+  function buildQuestionsToResearch(libraryType, categoryResults) {
+    const questions = [
+      "What does success look like in the first six to twelve months?",
+      "How is this position supported during onboarding?",
+      "Who does this position report to, and who are the closest collaborators?",
+      "What professional development support is available?"
+    ];
+
+    if (libraryType === "academic") {
+      questions.push("Is this position faculty, staff, tenure-track, non-tenure-track, or contract?");
+      questions.push("Are scholarship, service, or promotion expectations part of the role?");
+    }
+
+    if (libraryType === "public") {
+      questions.push("Which communities or service areas will this position work with most often?");
+      questions.push("How are programming and outreach priorities determined?");
+    }
+
+    if (libraryType === "archives") {
+      questions.push("What are the current processing, description, preservation, or access priorities?");
+      questions.push("Are there community consultation or ethical description practices already in place?");
+    }
+
+    if (categoryResults.some(function (item) { return item.name === "Assessment and improvement"; })) {
+      questions.push("What kinds of assessment data or outcomes does the department already collect?");
+    }
+
+    if (categoryResults.some(function (item) { return item.name === "Leadership and project ownership"; })) {
+      questions.push("What authority will this role have to make decisions or lead projects?");
+    }
+
+    return questions;
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const text = document.getElementById("job-description-text").value;
+    const libraryType = getRadio("decoderLibraryType");
+    const careerStage = getRadio("decoderCareerStage");
+
+    const categoryResults = analyzeCategories(text);
+    const requiredPreferredNotes = analyzeRequiredPreferred(text);
+    const careerStageAdvice = buildCareerStageAdvice(careerStage);
+    const questionsToResearch = buildQuestionsToResearch(libraryType, categoryResults);
+
+    const snapshot = [
+      buildLibraryTypeNote(libraryType)
+    ];
+
+    if (categoryResults.length > 0) {
+      snapshot.push("The most repeated themes detected are: " + categoryResults.slice(0, 4).map(function (item) {
+        return item.name;
+      }).join(", ") + ".");
+    } else {
+      snapshot.push("No major theme clusters were detected. Try checking whether the posting is very short or uses unusual wording.");
+    }
+
+    const detectedThemes = categoryResults.map(function (item) {
+      return "<strong>" + item.name + ":</strong> " + item.explanation + " <em>Detected terms:</em> " + item.terms.join(", ") + ".";
+    });
+
+    const prepPlan = categoryResults.slice(0, 3).map(function (item) {
+      return item.prepare;
+    });
+
+    prepPlan.push("Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.");
+    prepPlan.push("Prepare one story about a growth area. Search committees often value self-awareness when it is paired with a plan to learn.");
+
+    output.hidden = false;
+
+    output.innerHTML = `
+      <section class="content-card">
+        <p>
+          <strong>How to read this report:</strong> This tool does not score you or decide whether you should apply.
+          It highlights repeated job-posting patterns so you can read the position more strategically.
+        </p>
+      </section>
+
+      <div class="further-reading">
+        <h3>Position Snapshot</h3>
+        <ul>${list(snapshot)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Required vs. Preferred Language</h3>
+        <ul>${list(requiredPreferredNotes)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Repeated Themes Detected</h3>
+        <ul>${list(detectedThemes)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Advice for Your Career Stage</h3>
+        <ul>${list(careerStageAdvice)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Highest-ROI Preparation Plan</h3>
+        <ol>${list(prepPlan)}</ol>
+      </div>
+
+      <div class="further-reading">
+        <h3>Questions to Research Before Applying</h3>
+        <ul>${list(questionsToResearch)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Confidence Check</h3>
+        <p>
+          A job posting is often a wish list, not a portrait of one perfect person.
+          If you can speak honestly about the core responsibilities, show evidence of related experience,
+          and name how you are growing, you may still be a credible candidate even if you do not match every preferred qualification.
+        </p>
+      </div>
+    `;
+  });
+
+  reset.addEventListener("click", function () {
+    form.reset();
+    output.hidden = true;
+    output.innerHTML = "";
+  });
+})();
+</script>
+
   </body>
 </html>
