@@ -206,14 +206,14 @@
           <h2>Job Description Decoder</h2>
 
           <p>
-            Paste a library job description to make the posting more transparent.
-            This tool helps you identify what the employer may really be asking for,
-            what to prepare, and what not to over-interpret.
+            Paste a library job description to make the posting easier to read.
+            This tool highlights visible requirements, repeated themes, action verbs,
+            and preparation priorities without pretending to judge your qualifications.
           </p>
 
           <p>
-            This is not an AI tool and it does not decide whether you are qualified.
-            It looks for common library hiring themes and explains them in plain language.
+            This is a private, browser-based tool. It does not use AI, does not send
+            your text anywhere, and does not save what you paste.
           </p>
 
           <form id="job-decoder-form">
@@ -247,8 +247,8 @@
               <label><input name="decoderCareerStage" type="radio" value="recent-graduate" /> Recent graduate</label><br />
               <label><input name="decoderCareerStage" type="radio" value="career-changer" /> Career changer</label><br />
               <label><input name="decoderCareerStage" type="radio" value="library-staff" /> Library staff</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="emerging" /> Emerging librarian, 0–2 years</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="early-career" /> Early-career librarian, 3–5 years</label>
+              <label><input name="decoderCareerStage" type="radio" value="emerging" /> Emerging librarian, 0-2 years</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="early-career" /> Early-career librarian, 3-5 years</label>
             </div>
 
             <p>
@@ -536,91 +536,116 @@
 
   const themeMap = {
     'teaching and instruction': {
-      terms: ['instruction', 'teach', 'teaching', 'workshop', 'information literacy', 'lesson', 'classroom', 'curriculum'],
-      meaning: 'They may want someone who can explain ideas clearly, support learning, and feel comfortable teaching or facilitating.',
-      committee: 'The search committee may care about how you teach, adapt to different learners, and make information less intimidating.',
-      prepare: 'Prepare one example of teaching, training, tutoring, presenting, or helping someone understand something complex.'
+      highSignal: ['information literacy', 'library instruction', 'instruction session', 'teach', 'teaching', 'workshop', 'lesson plan'],
+      related: ['curriculum', 'classroom', 'learning outcomes', 'tutorial', 'presentation'],
+      whyItMatters: 'The posting visibly includes teaching, training, or learning-support language.',
+      prep: 'Prepare one concrete example of teaching, training, tutoring, presenting, or helping someone understand something complex.'
     },
-    'research support': {
-      terms: ['reference', 'research help', 'research consultation', 'research support', 'database', 'search strategy', 'literature search'],
-      meaning: 'They may want someone who can help people clarify questions, find sources, and evaluate information.',
-      committee: 'The search committee may care about how you approach a user who does not yet know how to ask the right question.',
-      prepare: 'Prepare one example of helping someone find, understand, or use information.'
+    'reference and research support': {
+      highSignal: ['reference', 'research consultation', 'research help', 'research support', 'literature search', 'search strategy'],
+      related: ['database', 'databases', 'scholarly sources', 'citation', 'research question'],
+      whyItMatters: 'The posting visibly includes language about helping users find, evaluate, or use information.',
+      prep: 'Prepare one example of helping someone clarify a question, locate information, or choose a search strategy.'
     },
     'public service': {
-      terms: ['public service', 'patron', 'user service', 'customer service', 'front desk', 'service desk', 'circulation'],
-      meaning: 'They may want someone who can work directly with users in a patient, respectful, and service-oriented way.',
-      committee: 'The search committee may care about communication, boundaries, judgment, and complex user needs.',
-      prepare: 'Prepare one example of helping someone under pressure or navigating a difficult service interaction.'
+      highSignal: ['public service', 'public services', 'patron services', 'user services', 'service desk', 'circulation'],
+      related: ['patron', 'customer service', 'front desk', 'user support'],
+      whyItMatters: 'The posting visibly includes direct service or user-support language.',
+      prep: 'Prepare one example of helping someone with patience, judgment, and care in a service context.'
     },
-    'outreach and collaboration': {
-      terms: ['outreach', 'programming', 'events', 'engagement', 'partnership', 'community', 'liaison', 'collaborate', 'collaboration'],
-      meaning: 'They may want someone who can build relationships and represent the library beyond its physical space.',
-      committee: 'The search committee may care about whether you can work with faculty, students, departments, community partners, or other stakeholders.',
-      prepare: 'Prepare one example of collaboration, outreach, event planning, or partnership-building.'
+    'outreach and engagement': {
+      highSignal: ['outreach', 'community engagement', 'engagement', 'liaison', 'partnership', 'programming'],
+      related: ['events', 'collaboration', 'collaborate', 'campus partners', 'community partners'],
+      whyItMatters: 'The posting visibly includes relationship-building, programming, or engagement language.',
+      prep: 'Prepare one example of collaboration, outreach, event planning, or partnership-building.'
     },
-    'equity and access': {
-      terms: ['equity', 'diversity', 'inclusion', 'accessibility', 'inclusive', 'belonging', 'underserved', 'dei', 'anti-racist'],
-      meaning: 'They may want someone who thinks critically about access, representation, belonging, and barriers to library use.',
-      committee: 'The search committee may care less about perfect language and more about concrete examples of inclusive practice.',
-      prepare: 'Prepare one specific example of making a service, space, lesson, collection, or interaction more accessible or inclusive.'
+    'equity, inclusion, and accessibility': {
+      highSignal: ['equity', 'diversity', 'inclusion', 'accessibility', 'inclusive', 'belonging'],
+      related: ['underserved', 'dei', 'anti-racist', 'barriers', 'universal design'],
+      whyItMatters: 'The posting visibly includes access, inclusion, accessibility, or equity language.',
+      prep: 'Prepare one specific example of making a service, lesson, space, collection, or interaction more accessible or inclusive.'
     },
     'assessment and improvement': {
-      terms: ['assessment', 'evaluate', 'evaluation', 'data', 'outcomes', 'survey', 'metrics', 'impact'],
-      meaning: 'They may want someone who can notice what is working, gather evidence, and improve services over time.',
-      committee: 'The search committee may care about whether you can move beyond doing work to learning from the work.',
-      prepare: 'Prepare one example of using feedback, observation, data, or reflection to improve something.'
+      highSignal: ['assessment', 'evaluation', 'evaluate', 'learning outcomes', 'program outcomes'],
+      related: ['survey', 'metrics', 'impact', 'feedback', 'measure', 'continuous improvement'],
+      whyItMatters: 'The posting visibly includes language about measuring, evaluating, or improving work.',
+      prep: 'Prepare one example of using feedback, observation, evidence, or data to improve something.'
     },
     'collections and resources': {
-      terms: ['collection development', 'collections', 'weeding', 'acquisitions', 'resources', 'licensing', 'vendors'],
-      meaning: 'They may want someone who can select, evaluate, promote, or manage library materials.',
-      committee: 'The search committee may care about how you balance user needs, budgets, access, representation, and evidence.',
-      prepare: 'Prepare to discuss how you would learn user needs and make thoughtful resource decisions.'
+      highSignal: ['collection development', 'collections', 'weeding', 'acquisitions', 'electronic resources'],
+      related: ['licensing', 'vendors', 'resource management', 'materials budget'],
+      whyItMatters: 'The posting visibly includes language about selecting, managing, evaluating, or promoting library resources.',
+      prep: 'Prepare to discuss how you would learn user needs and make thoughtful decisions about resources.'
     },
     'technology and digital tools': {
-      terms: ['technology', 'digital', 'software', 'systems', 'troubleshooting', 'makerspace', 'web', 'online learning'],
-      meaning: 'They may want someone who can learn tools, support users, and troubleshoot without making people feel judged.',
-      committee: 'The search committee may care about adaptability more than mastery of every listed tool.',
-      prepare: 'Prepare one example of learning a tool, solving a technology problem, or helping someone else use technology.'
+      highSignal: ['technology', 'digital tools', 'troubleshooting', 'systems', 'software', 'makerspace'],
+      related: ['online learning', 'digital literacy', 'web services', 'learning management system'],
+      whyItMatters: 'The posting visibly includes technology, tools, systems, or troubleshooting language.',
+      prep: 'Prepare one example of learning a tool, supporting a user with technology, or solving a technical problem.'
     },
-    'metadata and organization': {
-      terms: ['metadata', 'cataloging', 'classification', 'description', 'controlled vocabulary', 'discovery', 'records'],
-      meaning: 'They may want someone who understands that organization affects access, discovery, and user experience.',
-      committee: 'The search committee may care about accuracy, consistency, description, and how systems shape what people can find.',
-      prepare: 'Prepare one example involving organizing information, improving findability, or working carefully with records or data.'
+    'metadata, cataloging, and organization': {
+      highSignal: ['metadata', 'cataloging', 'cataloguing', 'classification', 'controlled vocabulary'],
+      related: ['description', 'discovery', 'records management', 'authority control'],
+      whyItMatters: 'The posting visibly includes language about organizing information for discovery and access.',
+      prep: 'Prepare one example involving organizing information, improving findability, or working carefully with records or data.'
     },
-    'archives and preservation': {
-      terms: ['archives', 'special collections', 'preservation', 'arrangement', 'description', 'processing', 'finding aid'],
-      meaning: 'They may want someone who can care for unique materials while thinking about context, access, ethics, and long-term stewardship.',
-      committee: 'The search committee may care about how you balance preservation, access, description, and community responsibility.',
-      prepare: 'Prepare one example involving context, description, preservation, historical materials, or ethical access.'
+    'archives and special collections': {
+      highSignal: ['archives', 'special collections', 'archival', 'preservation', 'finding aid'],
+      related: ['arrangement', 'description', 'processing', 'rare books', 'manuscripts'],
+      whyItMatters: 'The posting visibly includes archival, preservation, or special collections language.',
+      prep: 'Prepare one example involving context, description, preservation, historical materials, or ethical access.'
     },
-    'leadership and project ownership': {
-      terms: ['leadership', 'supervise', 'supervision', 'manage', 'committee', 'team', 'coordinate', 'project management'],
-      meaning: 'They may want someone who can take responsibility, coordinate moving parts, and work with others toward a shared goal.',
-      committee: 'The search committee may care about initiative, follow-through, communication, and how you handle ambiguity.',
-      prepare: 'Prepare one example of leading, coordinating, supervising, or carrying a project from idea to completion.'
+    'leadership and coordination': {
+      highSignal: ['leadership', 'supervise', 'supervision', 'management', 'project management'],
+      related: ['coordinate', 'committee', 'team', 'training', 'mentor', 'lead'],
+      whyItMatters: 'The posting visibly includes leadership, coordination, supervision, or project ownership language.',
+      prep: 'Prepare one example of leading, coordinating, supervising, training, or carrying a project through to completion.'
     }
   };
+
+  const actionVerbs = [
+    'teach', 'support', 'collaborate', 'coordinate', 'develop', 'manage',
+    'assess', 'evaluate', 'create', 'design', 'lead', 'train', 'provide',
+    'maintain', 'promote', 'facilitate', 'communicate', 'analyze', 'implement',
+    'plan', 'supervise', 'advise', 'consult', 'organize'
+  ];
 
   function getRadio(name) {
     const selected = document.querySelector('input[name="' + name + '"]:checked');
     return selected ? selected.value : '';
   }
 
-  function normalize(text) {
-    return text.toLowerCase();
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-  function countHits(text, terms) {
-    return terms.filter(function (term) {
-      return text.includes(term);
-    });
+  function termPattern(term) {
+    const escaped = escapeRegExp(term.trim()).replace(/\\\s+/g, '\\s+');
+    return new RegExp('(^|[^A-Za-z0-9])' + escaped + '([^A-Za-z0-9]|$)', 'gi');
+  }
+
+  function countTerm(text, term) {
+    const matches = text.match(termPattern(term));
+    return matches ? matches.length : 0;
+  }
+
+  function getHits(text, terms) {
+    return terms
+      .map(function (term) {
+        return { term: term, count: countTerm(text, term) };
+      })
+      .filter(function (hit) {
+        return hit.count > 0;
+      });
+  }
+
+  function pluralize(count, singular, plural) {
+    return count === 1 ? singular : plural;
   }
 
   function list(items) {
     if (!items || items.length === 0) {
-      return '<li>No strong patterns detected. This may mean the posting uses different language, not that the theme is absent.</li>';
+      return '<li>No clear matches detected.</li>';
     }
 
     return items.map(function (item) {
@@ -628,77 +653,169 @@
     }).join('');
   }
 
-  function analyzeThemes(jobText) {
-    const results = [];
+  function analyzeThemes(text) {
+    const themes = [];
 
     Object.keys(themeMap).forEach(function (theme) {
-      const hits = countHits(jobText, themeMap[theme].terms);
+      const data = themeMap[theme];
+      const highHits = getHits(text, data.highSignal);
+      const relatedHits = getHits(text, data.related);
+      const allHits = highHits.concat(relatedHits);
+      const totalCount = allHits.reduce(function (sum, hit) {
+        return sum + hit.count;
+      }, 0);
 
-      if (hits.length > 0) {
-        results.push({
+      if (highHits.length > 0 || allHits.length >= 2) {
+        themes.push({
           theme: theme,
-          hits: hits,
-          meaning: themeMap[theme].meaning,
-          committee: themeMap[theme].committee,
-          prepare: themeMap[theme].prepare
+          highHits: highHits,
+          relatedHits: relatedHits,
+          allHits: allHits,
+          totalCount: totalCount,
+          whyItMatters: data.whyItMatters,
+          prep: data.prep
         });
       }
     });
 
-    return results.sort(function (a, b) {
-      return b.hits.length - a.hits.length;
+    return themes.sort(function (a, b) {
+      return b.totalCount - a.totalCount;
     });
   }
 
-  function buildPositionSnapshot(themes, libraryType) {
-    const snapshot = [];
+  function analyzeRequiredPreferred(text) {
+    const requiredHits = getHits(text, [
+      'required', 'required qualifications', 'minimum qualifications',
+      'minimum qualification', 'must have', 'requires', 'demonstrated ability'
+    ]);
 
-    if (libraryType === 'academic') {
-      snapshot.push('This looks like an academic library role. Pay close attention to instruction, research support, collaboration, student success, and campus partnerships.');
-    } else if (libraryType === 'public') {
-      snapshot.push('This looks like a public library role. Pay close attention to public service, programming, community needs, technology support, and inclusive access.');
-    } else if (libraryType === 'archives') {
-      snapshot.push('This looks like an archives or special collections role. Pay close attention to description, preservation, access, context, ethics, and stewardship.');
-    } else if (libraryType === 'school') {
-      snapshot.push('This looks like a school library role. Pay close attention to student learning, curriculum support, youth services, and information literacy.');
-    } else if (libraryType === 'health') {
-      snapshot.push('This looks like a health sciences library role. Pay close attention to evidence-based information, database searching, research support, and specialized users.');
-    } else if (libraryType === 'law-government') {
-      snapshot.push('This looks like a law or government library role. Pay close attention to specialized reference, policy research, public records, legal information, or government documents.');
+    const preferredHits = getHits(text, [
+      'preferred', 'preferred qualifications', 'desired qualifications',
+      'desired', 'strongly preferred', 'ideal candidate', 'nice to have'
+    ]);
+
+    const items = [];
+
+    if (requiredHits.length > 0) {
+      items.push('Required/minimum language appears in the posting: ' + requiredHits.map(function (hit) { return hit.term; }).join(', ') + '. Treat this as the employer\'s stated baseline.');
     } else {
-      snapshot.push('The library type is unclear, so focus on repeated responsibilities, verbs, and themes in the posting.');
+      items.push('No clearly labeled required/minimum language was detected. The posting may still include requirements, but they may not be separated clearly.');
     }
 
-    if (themes.length > 0) {
-      snapshot.push('The most visible themes are: ' + themes.slice(0, 4).map(function (item) {
-        return item.theme;
-      }).join(', ') + '.');
+    if (preferredHits.length > 0) {
+      items.push('Preferred/desired language appears in the posting: ' + preferredHits.map(function (hit) { return hit.term; }).join(', ') + '. Preferred qualifications usually strengthen an application, but they are not always mandatory.');
+    } else {
+      items.push('No clearly labeled preferred/desired language was detected. The posting may blend preferred qualifications into the main responsibilities.');
     }
 
-    return snapshot;
+    items.push('Do not assume you need to meet every preferred qualification before applying. Use the required/minimum language and the repeated responsibilities to decide how strong your match is.');
+
+    return items;
+  }
+
+  function analyzeCredentials(text) {
+    const items = [];
+    const mlisHits = getHits(text, ['mlis', 'mls', 'mis', 'master of library', 'library science', 'ala-accredited']);
+    const experienceHits = text.match(/\b\d+\+?\s+(years?|yrs?)\b/gi) || [];
+    const remoteHits = getHits(text, ['remote', 'hybrid', 'on-site', 'onsite', 'in person', 'in-person']);
+    const salaryHits = text.match(/\$\s?\d[\d,]*(?:\.\d+)?(?:\s?[-–]\s?\$?\d[\d,]*(?:\.\d+)?)?/g) || [];
+
+    if (mlisHits.length > 0) {
+      items.push('Credential language detected: ' + mlisHits.map(function (hit) { return hit.term; }).join(', ') + '. Read carefully to see whether the degree is required, preferred, or accepted as equivalent experience.');
+    } else {
+      items.push('No obvious MLIS/MLS language was detected by this tool. Check the posting manually for degree requirements or equivalency language.');
+    }
+
+    if (experienceHits.length > 0) {
+      items.push('Years-of-experience language detected: ' + Array.from(new Set(experienceHits)).join(', ') + '. Notice whether this is required or preferred.');
+    } else {
+      items.push('No obvious years-of-experience requirement was detected.');
+    }
+
+    if (remoteHits.length > 0) {
+      items.push('Work-location language detected: ' + remoteHits.map(function (hit) { return hit.term; }).join(', ') + '. Confirm whether this affects your interest or eligibility.');
+    }
+
+    if (salaryHits.length > 0) {
+      items.push('Salary or pay language may be present: ' + Array.from(new Set(salaryHits)).slice(0, 3).join(', ') + '.');
+    }
+
+    return items;
+  }
+
+  function analyzeVerbs(text) {
+    const verbCounts = actionVerbs.map(function (verb) {
+      return { verb: verb, count: countTerm(text, verb) };
+    }).filter(function (item) {
+      return item.count > 0;
+    }).sort(function (a, b) {
+      return b.count - a.count;
+    });
+
+    return verbCounts.slice(0, 8).map(function (item) {
+      return item.verb + ' (' + item.count + ' ' + pluralize(item.count, 'mention', 'mentions') + ')';
+    });
+  }
+
+  function buildLibraryTypeNote(libraryType) {
+    const notes = {
+      academic: 'Because you selected academic library, pay special attention to instruction, research support, liaison work, student success, assessment, and campus collaboration.',
+      public: 'Because you selected public library, pay special attention to public service, programming, community needs, technology help, access, and inclusion.',
+      school: 'Because you selected school library, pay special attention to student learning, curriculum support, youth services, information literacy, and collaboration with teachers.',
+      archives: 'Because you selected archives/special collections, pay special attention to description, preservation, access, ethics, context, and stewardship.',
+      health: 'Because you selected health sciences library, pay special attention to evidence-based information, database searching, research support, specialized users, and careful communication.',
+      'law-government': 'Because you selected law/government library, pay special attention to specialized reference, public records, policy research, legal information, government documents, and accuracy.',
+      unsure: 'Because the library type is unclear, focus on repeated responsibilities, required qualifications, and the action verbs that appear throughout the posting.'
+    };
+
+    return [notes[libraryType] || notes.unsure];
+  }
+
+  function buildThemeSummary(themes) {
+    if (themes.length === 0) {
+      return ['No strong theme clusters were detected. Try scanning the posting manually for repeated responsibilities, qualifications, and verbs.'];
+    }
+
+    return themes.slice(0, 6).map(function (item) {
+      const matched = item.allHits.map(function (hit) {
+        return hit.term + ' (' + hit.count + ')';
+      }).join(', ');
+
+      return '<strong>' + item.theme + '</strong>: ' + item.totalCount + ' ' + pluralize(item.totalCount, 'match', 'matches') + ' detected. Matched language: ' + matched + '.';
+    });
+  }
+
+  function buildPlainLanguageInterpretation(themes) {
+    if (themes.length === 0) {
+      return ['The tool did not detect enough repeated theme language to make a reliable interpretation. That does not mean the posting has no themes; it may use wording outside this tool\'s vocabulary.'];
+    }
+
+    return themes.slice(0, 5).map(function (item) {
+      return '<strong>' + item.theme + ':</strong> ' + item.whyItMatters;
+    });
   }
 
   function buildStageAdvice(careerStage) {
     const advice = {
       'mlis-student': [
         'Use coursework, practica, internships, student work, and class projects as evidence when they connect to the posting.',
-        'You do not need paid experience for every theme, but you should be ready to explain how you are building relevant experience.'
+        'Look for required qualifications first. Preferred qualifications can become growth areas or talking points.'
       ],
       'recent-graduate': [
         'Translate recent academic work into professional examples instead of assuming it is too student-centered to count.',
-        'Look for class projects, assistantships, internships, volunteer work, and campus employment that connect to the posting.'
+        'Use internships, assistantships, class projects, volunteer work, and campus employment when they match repeated posting themes.'
       ],
       'career-changer': [
-        'Your strongest strategy is translation. The employer may not automatically see how your previous field connects to library work.',
-        'Look for transferable examples involving service, teaching, research, technology, outreach, project coordination, supervision, or information organization.'
+        'Look for transferable experience connected to service, teaching, technology, outreach, research, supervision, project coordination, or information organization.',
+        'Do not assume the employer will make the connection for you. Your resume and cover letter need to translate your experience clearly.'
       ],
       'library-staff': [
-        'Use your staff experience to show readiness for librarian-level work.',
-        'Look for examples involving judgment, training, user support, workflow knowledge, systems thinking, leadership, or independent problem-solving.'
+        'Use staff experience to show readiness for librarian-level work, especially judgment, user support, systems knowledge, training, workflow improvement, or leadership.',
+        'Look for places where you have already done pieces of the work, even if your title was not librarian.'
       ],
-      'emerging': [
+      emerging: [
         'Focus on concrete examples, growth, judgment, collaboration, and readiness.',
-        'You do not need to sound like a senior librarian. You need to show that you can learn, reflect, and contribute responsibly.'
+        'You do not need to sound like a senior librarian. You need to show evidence, reflection, and capacity to grow.'
       ],
       'early-career': [
         'Emphasize project ownership, specialization, leadership, collaboration, assessment, and professional trajectory.',
@@ -709,59 +826,73 @@
     return advice[careerStage] || ['Focus on the clearest examples that connect your experience to the posting.'];
   }
 
+  function buildPreparationPlan(themes) {
+    const plan = [];
+
+    if (themes.length > 0) {
+      themes.slice(0, 3).forEach(function (item) {
+        plan.push(item.prep);
+      });
+    }
+
+    plan.push('Highlight the posting and mark required qualifications, preferred qualifications, repeated responsibilities, and repeated action verbs in different colors.');
+    plan.push('Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.');
+    plan.push('Prepare one story about a growth area. Strong candidates can often explain both what they know and how they learn.');
+
+    return plan;
+  }
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const jobText = normalize(document.getElementById('job-description-text').value);
+    const jobText = document.getElementById('job-description-text').value;
     const libraryType = getRadio('decoderLibraryType');
     const careerStage = getRadio('decoderCareerStage');
 
     const themes = analyzeThemes(jobText);
-    const snapshot = buildPositionSnapshot(themes, libraryType);
+    const requiredPreferred = analyzeRequiredPreferred(jobText);
+    const credentials = analyzeCredentials(jobText);
+    const verbs = analyzeVerbs(jobText);
+    const libraryNote = buildLibraryTypeNote(libraryType);
+    const themeSummary = buildThemeSummary(themes);
+    const plainLanguage = buildPlainLanguageInterpretation(themes);
     const stageAdvice = buildStageAdvice(careerStage);
-
-    const reallyAbout = themes.slice(0, 5).map(function (item) {
-      return '<strong>' + item.theme + ':</strong> ' + item.meaning;
-    });
-
-    const committeeCare = themes.slice(0, 5).map(function (item) {
-      return '<strong>' + item.theme + ':</strong> ' + item.committee;
-    });
-
-    const prepPlan = themes.slice(0, 3).map(function (item) {
-      return item.prepare;
-    });
-
-    prepPlan.push('Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.');
-    prepPlan.push('Prepare one story about a growth area. Search committees often value self-awareness when it is paired with a plan to learn.');
-
-    const keywords = themes.slice(0, 8).map(function (item) {
-      return item.theme;
-    });
+    const preparationPlan = buildPreparationPlan(themes);
 
     output.hidden = false;
 
     output.innerHTML = `
       <section class="content-card">
         <p>
-          <strong>How to read this report:</strong> This tool is a mentor-style decoder, not a hiring decision.
-          It helps you notice patterns in the posting and prepare more strategically.
+          <strong>How to read this report:</strong> This is a transparent pattern-spotting tool.
+          It only reports language it can detect in the posting. It is not a hiring decision, an ATS score, or an evaluation of your worth.
         </p>
       </section>
 
       <div class="further-reading">
-        <h3>Position Snapshot</h3>
-        <ul>${list(snapshot)}</ul>
+        <h3>Position Context</h3>
+        <ul>${list(libraryNote)}</ul>
       </div>
 
       <div class="further-reading">
-        <h3>What This Job Is Really About</h3>
-        <ul>${list(reallyAbout)}</ul>
+        <h3>Required, Preferred, and Credential Signals</h3>
+        <ul>${list(requiredPreferred.concat(credentials))}</ul>
       </div>
 
       <div class="further-reading">
-        <h3>What the Search Committee May Care About</h3>
-        <ul>${list(committeeCare)}</ul>
+        <h3>Repeated Themes Detected</h3>
+        <ul>${list(themeSummary)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Plain-Language Interpretation</h3>
+        <ul>${list(plainLanguage)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Action Verbs to Notice</h3>
+        <p>These verbs can help you see what the posting emphasizes. Use them only when they honestly fit your experience.</p>
+        <ul>${list(verbs)}</ul>
       </div>
 
       <div class="further-reading">
@@ -770,22 +901,15 @@
       </div>
 
       <div class="further-reading">
-        <h3>Resume Language to Notice</h3>
-        <p>Use these themes only when they honestly reflect your experience.</p>
-        <ul>${list(keywords)}</ul>
-      </div>
-
-      <div class="further-reading">
         <h3>Highest-ROI Preparation Plan</h3>
-        <ol>${list(prepPlan)}</ol>
+        <ol>${list(preparationPlan)}</ol>
       </div>
 
       <div class="further-reading">
         <h3>Confidence Check</h3>
         <p>
-          A job posting is often a wish list, not a portrait of one perfect person.
-          If you can speak honestly about the core responsibilities, show evidence of related experience,
-          and name how you are growing, you may still be a credible candidate even if you do not match every preferred qualification.
+          A posting is often a mix of baseline requirements, preferences, institutional hopes, and future growth areas.
+          Focus first on the required qualifications and repeated responsibilities. Preferred qualifications can often become preparation topics rather than automatic reasons not to apply.
         </p>
       </div>
     `;
