@@ -22,48 +22,46 @@
       />
 
       <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
 
-  <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-button" type="button">
+            Topics
+          </button>
 
-  <div class="nav-dropdown">
-    <button class="nav-dropdown-button" type="button">
-      Topics
-    </button>
+          <div class="nav-dropdown-menu">
+            <a href="professional-identity.html">Professional Identity</a>
+            <a href="job-searching-rejection.html">Job Searching &amp; Rejection</a>
+            <a href="burnout-recovery.html">Burnout &amp; Recovery</a>
+            <a href="confidence-self-efficacy.html">Confidence &amp; Self-Efficacy</a>
+            <a href="mentorship-community.html">Mentorship &amp; Community</a>
+          </div>
+        </div>
 
-    <div class="nav-dropdown-menu">
-      <a href="professional-identity.html">Professional Identity</a>
-      <a href="job-searching-rejection.html">Job Searching &amp; Rejection</a>
-      <a href="burnout-recovery.html">Burnout &amp; Recovery</a>
-      <a href="confidence-self-efficacy.html">Confidence &amp; Self-Efficacy</a>
-      <a href="mentorship-community.html">Mentorship &amp; Community</a>
-    </div>
-  </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-button" type="button">
+            Tools &amp; Help
+          </button>
 
-  <div class="nav-dropdown">
-    <button class="nav-dropdown-button" type="button">
-      Tools & Help
-    </button>
+          <div class="nav-dropdown-menu">
+            <a href="reflection-tools.html">Reflection Tools</a>
+            <a href="skill-building-tools.html">Skill-Building Tools</a>
+          </div>
+        </div>
 
-    <div class="nav-dropdown-menu">
-      <a href="reflection-tools.html">Reflection Tools</a>
-      <a href="skill-building-tools.html">Skill-Building Tools</a>
-    </div>
-  </div>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-button" type="button">
+            Community
+          </button>
 
-  <div class="nav-dropdown">
-    <button class="nav-dropdown-button" type="button">
-      Community
-    </button>
+          <div class="nav-dropdown-menu">
+            <a href="community.html">Join Community</a>
+            <a href="community-wisdom.html">Community Wisdom Archive</a>
+          </div>
+        </div>
 
-    <div class="nav-dropdown-menu">
-      <a href="community.html">Join Community</a>
-      <a href="community-wisdom.html">Community Wisdom Archive</a>
-    </div>
-  </div>
-
-  <a href="resource-library.html">Resource Library</a>
-
-</nav>
+        <a href="resource-library.html">Resource Library</a>
+      </nav>
     </header>
 
     <div class="site-layout">
@@ -200,7 +198,67 @@
           </form>
 
           <div id="career-translator-output" aria-live="polite" hidden></div>
-        </article>\n\n        <article class="article-section" id="job-description-decoder">\n          <p class="reflection-label">Interactive Tool</p>\n\n          <h2>Job Description Decoder</h2>\n\n          <p>\n            Paste a library job description to identify common themes, hidden expectations,\n            likely interview topics, and high-impact preparation areas.\n          </p>\n\n          <p>\n            This tool does not decide whether you are qualified. It looks for common library\n            job posting language and helps make the posting more transparent.\n          </p>\n\n          <form id="job-decoder-form">\n            <div class="further-reading">\n              <h3>1. Paste the job description</h3>\n\n              <textarea\n                id="job-description-text"\n                rows="14"\n                required\n                aria-label="Paste job description text"\n              ></textarea>\n            </div>\n\n            <div class="further-reading">\n              <h3>2. What type of library is this position in?</h3>\n\n              <label><input name="libraryType" type="radio" value="academic" required /> Academic library</label><br />\n              <label><input name="libraryType" type="radio" value="public" /> Public library</label><br />\n              <label><input name="libraryType" type="radio" value="school" /> School library</label><br />\n              <label><input name="libraryType" type="radio" value="archives" /> Archives / Special Collections</label><br />\n              <label><input name="libraryType" type="radio" value="health" /> Health Sciences library</label><br />\n              <label><input name="libraryType" type="radio" value="law-government" /> Law / Government library</label><br />\n              <label><input name="libraryType" type="radio" value="unsure" /> Not sure</label>\n            </div>\n\n            <div class="further-reading">\n              <h3>3. Which best describes you?</h3>\n\n              <label><input name="careerStage" type="radio" value="mlis-student" required /> MLIS student</label><br />\n              <label><input name="careerStage" type="radio" value="recent-graduate" /> Recent graduate</label><br />\n              <label><input name="careerStage" type="radio" value="career-changer" /> Career changer</label><br />\n              <label><input name="careerStage" type="radio" value="library-staff" /> Library staff</label><br />\n              <label><input name="careerStage" type="radio" value="emerging" /> Emerging librarian, 0-2 years</label><br />\n              <label><input name="careerStage" type="radio" value="early-career" /> Early-career librarian, 3-5 years</label>\n            </div>\n\n            <p>\n              <button type="submit">Decode job description</button>\n              <button type="button" id="job-decoder-reset">Reset</button>\n            </p>\n          </form>\n\n          <div id="job-decoder-output" aria-live="polite" hidden></div>\n        </article>
+        </article>
+
+        <article class="article-section" id="job-description-decoder">
+          <p class="reflection-label">Interactive Tool</p>
+
+          <h2>Job Description Decoder</h2>
+
+          <p>
+            Paste a library job description to make the posting more transparent.
+            This tool helps you identify what the employer may really be asking for,
+            what to prepare, and what not to over-interpret.
+          </p>
+
+          <p>
+            This is not an AI tool and it does not decide whether you are qualified.
+            It looks for common library hiring themes and explains them in plain language.
+          </p>
+
+          <form id="job-decoder-form">
+            <div class="further-reading">
+              <h3>1. Paste the job description</h3>
+
+              <textarea
+                id="job-description-text"
+                rows="14"
+                required
+                aria-label="Paste job description text"
+              ></textarea>
+            </div>
+
+            <div class="further-reading">
+              <h3>2. What type of library is this position in?</h3>
+
+              <label><input name="decoderLibraryType" type="radio" value="academic" required /> Academic library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="public" /> Public library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="school" /> School library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="archives" /> Archives / Special Collections</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="health" /> Health Sciences library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="law-government" /> Law / Government library</label><br />
+              <label><input name="decoderLibraryType" type="radio" value="unsure" /> Not sure</label>
+            </div>
+
+            <div class="further-reading">
+              <h3>3. Which best describes you?</h3>
+
+              <label><input name="decoderCareerStage" type="radio" value="mlis-student" required /> MLIS student</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="recent-graduate" /> Recent graduate</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="career-changer" /> Career changer</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="library-staff" /> Library staff</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="emerging" /> Emerging librarian, 0–2 years</label><br />
+              <label><input name="decoderCareerStage" type="radio" value="early-career" /> Early-career librarian, 3–5 years</label>
+            </div>
+
+            <p>
+              <button type="submit">Decode job description</button>
+              <button type="button" id="job-decoder-reset">Reset</button>
+            </p>
+          </form>
+
+          <div id="job-decoder-output" aria-live="polite" hidden></div>
+        </article>
 
         <section class="reflection" id="reflection">
           <p class="reflection-label">A Note on Use</p>
@@ -235,13 +293,15 @@
           <a href="#reflection">A Note on Use</a>
         </nav>
       </aside>
-    </div>\n\n    <script>\n(function () {\n  const form = document.getElementById('job-decoder-form');\n  const output = document.getElementById('job-decoder-output');\n  const reset = document.getElementById('job-decoder-reset');\n\n  if (!form || !output || !reset) {\n    return;\n  }\n\n  const themeMap = {\n    "instruction and teaching": {\n      terms: ["instruction", "teach", "teaching", "workshop", "information literacy", "lesson", "classroom", "curriculum"],\n      meaning: "This posting likely values someone who can teach, explain information clearly, and support learning.",\n      interview: "Prepare a story about teaching, training, tutoring, presenting, or explaining something complex."\n    },\n    "reference and research support": {\n      terms: ["reference", "research help", "research consultation", "research support", "database", "search strategy", "literature search"],\n      meaning: "This posting likely expects direct support for users doing research or information-seeking.",\n      interview: "Prepare to explain how you help someone clarify a question and find appropriate information."\n    },\n    "public service": {\n      terms: ["public service", "patron", "user service", "customer service", "front desk", "service desk", "circulation"],\n      meaning: "This posting likely values responsive, respectful, user-centered service.",\n      interview: "Prepare a story about helping someone with patience, care, and good judgment."\n    },\n    "outreach and programming": {\n      terms: ["outreach", "programming", "events", "engagement", "partnership", "community", "liaison"],\n      meaning: "This posting likely expects relationship-building and active connection with a community or campus.",\n      interview: "Prepare examples of collaboration, event planning, communication, or community engagement."\n    },\n    "equity, inclusion, and accessibility": {\n      terms: ["equity", "diversity", "inclusion", "accessibility", "inclusive", "belonging", "underserved", "dei", "anti-racist"],\n      meaning: "This posting likely expects a thoughtful approach to inclusive service, access, and representation.",\n      interview: "Prepare to discuss how you make services, teaching, spaces, or collections more accessible and inclusive."\n    },\n    "assessment and evidence": {\n      terms: ["assessment", "evaluate", "evaluation", "data", "outcomes", "survey", "metrics", "impact"],\n      meaning: "This posting likely values someone who can measure, reflect on, and improve services or programs.",\n      interview: "Prepare an example of using feedback, data, observation, or reflection to improve something."\n    },\n    "collections": {\n      terms: ["collection development", "collections", "weeding", "acquisitions", "resources", "licensing", "vendors"],\n      meaning: "This posting may involve selecting, evaluating, maintaining, or promoting library materials.",\n      interview: "Prepare to talk about user needs, access, representation, and decision-making around resources."\n    },\n    "technology and digital tools": {\n      terms: ["technology", "digital", "software", "systems", "troubleshooting", "makerspace", "web", "online learning"],\n      meaning: "This posting likely expects comfort learning tools, supporting users, and troubleshooting technology.",\n      interview: "Prepare a story about learning a tool, solving a technology problem, or supporting someone else with tech."\n    },\n    "metadata, cataloging, and organization": {\n      terms: ["metadata", "cataloging", "classification", "description", "controlled vocabulary", "discovery", "records"],\n      meaning: "This posting likely involves organizing information so people can find, understand, and use it.",\n      interview: "Prepare to discuss accuracy, consistency, description, access, and how organization affects users."\n    },\n    "archives and preservation": {\n      terms: ["archives", "special collections", "preservation", "arrangement", "description", "processing", "finding aid"],\n      meaning: "This posting likely involves stewardship, context, access, and care for unique or historical materials.",\n      interview: "Prepare examples involving description, preservation, ethics, context, or community memory."\n    },\n    "leadership and collaboration": {\n      terms: ["leadership", "supervise", "supervision", "manage", "collaborate", "committee", "team", "coordinate"],\n      meaning: "This posting likely expects collaboration, initiative, communication, and responsibility across groups.",\n      interview: "Prepare a story about coordinating people, leading a project, or working through group complexity."\n    },\n    "scholarly communication": {\n      terms: ["scholarly communication", "open access", "repositories", "publishing", "copyright", "oer", "open educational resources"],\n      meaning: "This posting may involve supporting research visibility, publishing, copyright, or open education.",\n      interview: "Prepare to discuss how you would learn or support scholarly communication topics."\n    }\n  };\n\n  function getRadio(name) {\n    const selected = document.querySelector('input[name="' + name + '"]:checked');\n    return selected ? selected.value : "";\n  }\n\n  function normalize(text) {\n    return text.toLowerCase();\n  }\n\n  function countHits(text, terms) {\n    return terms.filter(function (term) {\n      return text.includes(term);\n    });\n  }\n\n  function list(items) {\n    if (!items || items.length === 0) {\n      return "<li>No strong matches detected. This may mean the posting uses different language.</li>";\n    }\n\n    return items.map(function (item) {\n      return "<li>" + item + "</li>";\n    }).join("");\n  }\n\n  function analyzeThemes(jobText) {\n    const results = [];\n\n    Object.keys(themeMap).forEach(function (theme) {\n      const hits = countHits(jobText, themeMap[theme].terms);\n\n      if (hits.length > 0) {\n        results.push({\n          theme: theme,\n          hits: hits,\n          meaning: themeMap[theme].meaning,\n          interview: themeMap[theme].interview\n        });\n      }\n    });\n\n    return results.sort(function (a, b) {\n      return b.hits.length - a.hits.length;\n    });\n  }\n\n  function detectRequiredPreferred(jobText) {\n    const requiredTerms = ["required", "minimum qualification", "minimum qualifications", "must have", "requires", "required qualifications"];\n    const preferredTerms = ["preferred", "desired", "strongly preferred", "preferred qualifications", "ideal candidate", "nice to have"];\n\n    return {\n      required: countHits(jobText, requiredTerms),\n      preferred: countHits(jobText, preferredTerms)\n    };\n  }\n\n  function buildPositionSnapshot(themes, libraryType) {\n    const snapshot = [];\n\n    if (libraryType === "academic") {\n      snapshot.push("This appears to be an academic library role, so the posting may emphasize instruction, research support, collaboration, student success, or liaison work.");\n    }\n\n    if (libraryType === "public") {\n      snapshot.push("This appears to be a public library role, so the posting may emphasize public service, programming, community needs, technology help, and inclusive access.");\n    }\n\n    if (libraryType === "archives") {\n      snapshot.push("This appears to be an archives or special collections role, so the posting may emphasize description, preservation, access, ethics, and context.");\n    }\n\n    if (libraryType === "school") {\n      snapshot.push("This appears to be a school library role, so the posting may emphasize student learning, curriculum support, youth services, and information literacy.");\n    }\n\n    if (libraryType === "health") {\n      snapshot.push("This appears to be a health sciences library role, so the posting may emphasize evidence-based information, database searching, research support, and specialized users.");\n    }\n\n    if (libraryType === "law-government") {\n      snapshot.push("This appears to be a law or government library role, so the posting may emphasize specialized reference, public records, policy research, legal information, or government documents.");\n    }\n\n    if (libraryType === "unsure") {\n      snapshot.push("The library type is unclear, so focus on the responsibilities and repeated themes in the posting.");\n    }\n\n    if (themes.length > 0) {\n      snapshot.push("The most visible themes are: " + themes.slice(0, 4).map(function (item) {\n        return item.theme;\n      }).join(", ") + ".");\n    }\n\n    return snapshot;\n  }\n\n  function buildRequiredPreferredExplanation(requiredPreferred) {\n    const notes = [];\n\n    if (requiredPreferred.required.length > 0) {\n      notes.push("The posting uses required/minimum qualification language. Treat these as the employer's stated baseline.");\n    } else {\n      notes.push("The posting does not have very obvious required/minimum qualification language, or it may use different wording.");\n    }\n\n    if (requiredPreferred.preferred.length > 0) {\n      notes.push("The posting uses preferred/desired language. Preferred qualifications usually strengthen an application, but they are not always mandatory.");\n    } else {\n      notes.push("The posting does not have very obvious preferred qualification language, or it may blend preferred skills into the main description.");\n    }\n\n    notes.push("Do not assume you need to meet every preferred qualification before applying.");\n\n    return notes;\n  }\n\n  function buildStageAdvice(careerStage) {\n    const advice = {\n      "mlis-student": [\n        "Look for places where coursework, practica, internships, student leadership, or class projects match the posting.",\n        "If you do not have paid experience in an area, consider whether you have a course project or practicum example that demonstrates related ability."\n      ],\n      "recent-graduate": [\n        "Translate recent academic work into professional examples.",\n        "Use class projects, internships, assistantships, and volunteer work as evidence when they match the posting."\n      ],\n      "career-changer": [\n        "Focus on transferable experience rather than assuming library-specific language is required for every skill.",\n        "Translate previous work into library language: service, instruction, research, technology support, project management, outreach, or information organization."\n      ],\n      "library-staff": [\n        "Highlight how your staff experience connects to librarian-level responsibilities.",\n        "Look for evidence of decision-making, training, user support, systems knowledge, leadership, or independent judgment."\n      ],\n      "emerging": [\n        "Use early professional examples to show growth, judgment, collaboration, and follow-through.",\n        "You do not need to sound like a senior librarian. Focus on readiness, learning, and concrete examples."\n      ],\n      "early-career": [\n        "Emphasize specialization, leadership, project ownership, assessment, collaboration, and professional trajectory.",\n        "Look for ways to show not only what you have done, but how your judgment has developed."\n      ]\n    };\n\n    return advice[careerStage] || ["Focus on the clearest examples that connect your experience to the posting."];\n  }\n\n  function buildResumeKeywords(themes) {\n    return themes.slice(0, 8).map(function (item) {\n      return item.theme;\n    });\n  }\n\n  function buildPreparationPlan(themes) {\n    const plan = [];\n\n    if (themes.length === 0) {\n      return ["Review the posting manually and highlight repeated responsibilities, qualifications, and verbs."];\n    }\n\n    themes.slice(0, 3).forEach(function (item) {\n      plan.push("Prepare one concrete example related to " + item.theme + ".");\n    });\n\n    plan.push("Look for repeated verbs in the posting, such as teach, collaborate, assess, support, manage, develop, or coordinate.");\n    plan.push("Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.");\n\n    return plan;\n  }\n\n  form.addEventListener('submit', function (event) {\n    event.preventDefault();\n\n    const jobText = normalize(document.getElementById('job-description-text').value);\n    const libraryType = getRadio('libraryType');\n    const careerStage = getRadio('careerStage');\n\n    const themes = analyzeThemes(jobText);\n    const requiredPreferred = detectRequiredPreferred(jobText);\n    const snapshot = buildPositionSnapshot(themes, libraryType);\n    const reqPrefNotes = buildRequiredPreferredExplanation(requiredPreferred);\n    const stageAdvice = buildStageAdvice(careerStage);\n    const keywords = buildResumeKeywords(themes);\n    const prepPlan = buildPreparationPlan(themes);\n\n    const hiddenExpectations = themes.map(function (item) {\n      return "<strong>" + item.theme + ":</strong> " + item.meaning;\n    });\n\n    const interviewThemes = themes.slice(0, 6).map(function (item) {\n      return item.interview;\n    });\n\n    output.hidden = false;\n\n    output.innerHTML = `\n      <section class="content-card">\n        <p>\n          <strong>How to read this report:</strong> This is a pattern-spotting tool, not a hiring decision.\n          It helps make the job posting more transparent by identifying common library job description themes.\n        </p>\n      </section>\n\n      <div class="further-reading">\n        <h3>Position Snapshot</h3>\n        <ul>${list(snapshot)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>Required vs. Preferred Language</h3>\n        <ul>${list(reqPrefNotes)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>What They May Really Be Looking For</h3>\n        <ul>${list(hiddenExpectations)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>Resume Keywords to Notice</h3>\n        <p>Use these only when they honestly describe your experience.</p>\n        <ul>${list(keywords)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>Advice for Your Career Stage</h3>\n        <ul>${list(stageAdvice)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>Likely Interview Themes</h3>\n        <ul>${list(interviewThemes)}</ul>\n      </div>\n\n      <div class="further-reading">\n        <h3>Highest-ROI Preparation Plan</h3>\n        <ol>${list(prepPlan)}</ol>\n      </div>\n\n      <div class="further-reading">\n        <h3>Confidence Check</h3>\n        <p>\n          A job posting is often a wish list, not a perfect description of one person.\n          If you meet the core responsibilities and can speak honestly about your growth areas,\n          you may still be a credible candidate even if you do not match every preferred qualification.\n        </p>\n      </div>\n    `;\n  });\n\n  reset.addEventListener('click', function () {\n    form.reset();\n    output.hidden = true;\n    output.innerHTML = "";\n  });\n})();\n</script>
+    </div>
 
-   <script>
+    <script>
 (function () {
   const form = document.getElementById('career-translator-form');
   const output = document.getElementById('career-translator-output');
   const resetButton = document.getElementById('career-translator-reset');
+
+  if (!form || !output || !resetButton) return;
 
   function checkedValues(name) {
     return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
@@ -405,8 +465,7 @@
 
     if (fields.length === 0 || skills.length === 0) {
       output.hidden = false;
-      output.innerHTML =
-        '<section class="content-card"><p><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</p></section>';
+      output.innerHTML = '<section class="content-card"><p><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</p></section>';
       return;
     }
 
@@ -465,6 +524,279 @@
     output.innerHTML = '';
   });
 })();
-</script>
+    </script>
+
+    <script>
+(function () {
+  const form = document.getElementById('job-decoder-form');
+  const output = document.getElementById('job-decoder-output');
+  const reset = document.getElementById('job-decoder-reset');
+
+  if (!form || !output || !reset) return;
+
+  const themeMap = {
+    'teaching and instruction': {
+      terms: ['instruction', 'teach', 'teaching', 'workshop', 'information literacy', 'lesson', 'classroom', 'curriculum'],
+      meaning: 'They may want someone who can explain ideas clearly, support learning, and feel comfortable teaching or facilitating.',
+      committee: 'The search committee may care about how you teach, adapt to different learners, and make information less intimidating.',
+      prepare: 'Prepare one example of teaching, training, tutoring, presenting, or helping someone understand something complex.'
+    },
+    'research support': {
+      terms: ['reference', 'research help', 'research consultation', 'research support', 'database', 'search strategy', 'literature search'],
+      meaning: 'They may want someone who can help people clarify questions, find sources, and evaluate information.',
+      committee: 'The search committee may care about how you approach a user who does not yet know how to ask the right question.',
+      prepare: 'Prepare one example of helping someone find, understand, or use information.'
+    },
+    'public service': {
+      terms: ['public service', 'patron', 'user service', 'customer service', 'front desk', 'service desk', 'circulation'],
+      meaning: 'They may want someone who can work directly with users in a patient, respectful, and service-oriented way.',
+      committee: 'The search committee may care about communication, boundaries, judgment, and complex user needs.',
+      prepare: 'Prepare one example of helping someone under pressure or navigating a difficult service interaction.'
+    },
+    'outreach and collaboration': {
+      terms: ['outreach', 'programming', 'events', 'engagement', 'partnership', 'community', 'liaison', 'collaborate', 'collaboration'],
+      meaning: 'They may want someone who can build relationships and represent the library beyond its physical space.',
+      committee: 'The search committee may care about whether you can work with faculty, students, departments, community partners, or other stakeholders.',
+      prepare: 'Prepare one example of collaboration, outreach, event planning, or partnership-building.'
+    },
+    'equity and access': {
+      terms: ['equity', 'diversity', 'inclusion', 'accessibility', 'inclusive', 'belonging', 'underserved', 'dei', 'anti-racist'],
+      meaning: 'They may want someone who thinks critically about access, representation, belonging, and barriers to library use.',
+      committee: 'The search committee may care less about perfect language and more about concrete examples of inclusive practice.',
+      prepare: 'Prepare one specific example of making a service, space, lesson, collection, or interaction more accessible or inclusive.'
+    },
+    'assessment and improvement': {
+      terms: ['assessment', 'evaluate', 'evaluation', 'data', 'outcomes', 'survey', 'metrics', 'impact'],
+      meaning: 'They may want someone who can notice what is working, gather evidence, and improve services over time.',
+      committee: 'The search committee may care about whether you can move beyond doing work to learning from the work.',
+      prepare: 'Prepare one example of using feedback, observation, data, or reflection to improve something.'
+    },
+    'collections and resources': {
+      terms: ['collection development', 'collections', 'weeding', 'acquisitions', 'resources', 'licensing', 'vendors'],
+      meaning: 'They may want someone who can select, evaluate, promote, or manage library materials.',
+      committee: 'The search committee may care about how you balance user needs, budgets, access, representation, and evidence.',
+      prepare: 'Prepare to discuss how you would learn user needs and make thoughtful resource decisions.'
+    },
+    'technology and digital tools': {
+      terms: ['technology', 'digital', 'software', 'systems', 'troubleshooting', 'makerspace', 'web', 'online learning'],
+      meaning: 'They may want someone who can learn tools, support users, and troubleshoot without making people feel judged.',
+      committee: 'The search committee may care about adaptability more than mastery of every listed tool.',
+      prepare: 'Prepare one example of learning a tool, solving a technology problem, or helping someone else use technology.'
+    },
+    'metadata and organization': {
+      terms: ['metadata', 'cataloging', 'classification', 'description', 'controlled vocabulary', 'discovery', 'records'],
+      meaning: 'They may want someone who understands that organization affects access, discovery, and user experience.',
+      committee: 'The search committee may care about accuracy, consistency, description, and how systems shape what people can find.',
+      prepare: 'Prepare one example involving organizing information, improving findability, or working carefully with records or data.'
+    },
+    'archives and preservation': {
+      terms: ['archives', 'special collections', 'preservation', 'arrangement', 'description', 'processing', 'finding aid'],
+      meaning: 'They may want someone who can care for unique materials while thinking about context, access, ethics, and long-term stewardship.',
+      committee: 'The search committee may care about how you balance preservation, access, description, and community responsibility.',
+      prepare: 'Prepare one example involving context, description, preservation, historical materials, or ethical access.'
+    },
+    'leadership and project ownership': {
+      terms: ['leadership', 'supervise', 'supervision', 'manage', 'committee', 'team', 'coordinate', 'project management'],
+      meaning: 'They may want someone who can take responsibility, coordinate moving parts, and work with others toward a shared goal.',
+      committee: 'The search committee may care about initiative, follow-through, communication, and how you handle ambiguity.',
+      prepare: 'Prepare one example of leading, coordinating, supervising, or carrying a project from idea to completion.'
+    }
+  };
+
+  function getRadio(name) {
+    const selected = document.querySelector('input[name="' + name + '"]:checked');
+    return selected ? selected.value : '';
+  }
+
+  function normalize(text) {
+    return text.toLowerCase();
+  }
+
+  function countHits(text, terms) {
+    return terms.filter(function (term) {
+      return text.includes(term);
+    });
+  }
+
+  function list(items) {
+    if (!items || items.length === 0) {
+      return '<li>No strong patterns detected. This may mean the posting uses different language, not that the theme is absent.</li>';
+    }
+
+    return items.map(function (item) {
+      return '<li>' + item + '</li>';
+    }).join('');
+  }
+
+  function analyzeThemes(jobText) {
+    const results = [];
+
+    Object.keys(themeMap).forEach(function (theme) {
+      const hits = countHits(jobText, themeMap[theme].terms);
+
+      if (hits.length > 0) {
+        results.push({
+          theme: theme,
+          hits: hits,
+          meaning: themeMap[theme].meaning,
+          committee: themeMap[theme].committee,
+          prepare: themeMap[theme].prepare
+        });
+      }
+    });
+
+    return results.sort(function (a, b) {
+      return b.hits.length - a.hits.length;
+    });
+  }
+
+  function buildPositionSnapshot(themes, libraryType) {
+    const snapshot = [];
+
+    if (libraryType === 'academic') {
+      snapshot.push('This looks like an academic library role. Pay close attention to instruction, research support, collaboration, student success, and campus partnerships.');
+    } else if (libraryType === 'public') {
+      snapshot.push('This looks like a public library role. Pay close attention to public service, programming, community needs, technology support, and inclusive access.');
+    } else if (libraryType === 'archives') {
+      snapshot.push('This looks like an archives or special collections role. Pay close attention to description, preservation, access, context, ethics, and stewardship.');
+    } else if (libraryType === 'school') {
+      snapshot.push('This looks like a school library role. Pay close attention to student learning, curriculum support, youth services, and information literacy.');
+    } else if (libraryType === 'health') {
+      snapshot.push('This looks like a health sciences library role. Pay close attention to evidence-based information, database searching, research support, and specialized users.');
+    } else if (libraryType === 'law-government') {
+      snapshot.push('This looks like a law or government library role. Pay close attention to specialized reference, policy research, public records, legal information, or government documents.');
+    } else {
+      snapshot.push('The library type is unclear, so focus on repeated responsibilities, verbs, and themes in the posting.');
+    }
+
+    if (themes.length > 0) {
+      snapshot.push('The most visible themes are: ' + themes.slice(0, 4).map(function (item) {
+        return item.theme;
+      }).join(', ') + '.');
+    }
+
+    return snapshot;
+  }
+
+  function buildStageAdvice(careerStage) {
+    const advice = {
+      'mlis-student': [
+        'Use coursework, practica, internships, student work, and class projects as evidence when they connect to the posting.',
+        'You do not need paid experience for every theme, but you should be ready to explain how you are building relevant experience.'
+      ],
+      'recent-graduate': [
+        'Translate recent academic work into professional examples instead of assuming it is too student-centered to count.',
+        'Look for class projects, assistantships, internships, volunteer work, and campus employment that connect to the posting.'
+      ],
+      'career-changer': [
+        'Your strongest strategy is translation. The employer may not automatically see how your previous field connects to library work.',
+        'Look for transferable examples involving service, teaching, research, technology, outreach, project coordination, supervision, or information organization.'
+      ],
+      'library-staff': [
+        'Use your staff experience to show readiness for librarian-level work.',
+        'Look for examples involving judgment, training, user support, workflow knowledge, systems thinking, leadership, or independent problem-solving.'
+      ],
+      'emerging': [
+        'Focus on concrete examples, growth, judgment, collaboration, and readiness.',
+        'You do not need to sound like a senior librarian. You need to show that you can learn, reflect, and contribute responsibly.'
+      ],
+      'early-career': [
+        'Emphasize project ownership, specialization, leadership, collaboration, assessment, and professional trajectory.',
+        'Show not only what you have done, but how your professional judgment has developed.'
+      ]
+    };
+
+    return advice[careerStage] || ['Focus on the clearest examples that connect your experience to the posting.'];
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const jobText = normalize(document.getElementById('job-description-text').value);
+    const libraryType = getRadio('decoderLibraryType');
+    const careerStage = getRadio('decoderCareerStage');
+
+    const themes = analyzeThemes(jobText);
+    const snapshot = buildPositionSnapshot(themes, libraryType);
+    const stageAdvice = buildStageAdvice(careerStage);
+
+    const reallyAbout = themes.slice(0, 5).map(function (item) {
+      return '<strong>' + item.theme + ':</strong> ' + item.meaning;
+    });
+
+    const committeeCare = themes.slice(0, 5).map(function (item) {
+      return '<strong>' + item.theme + ':</strong> ' + item.committee;
+    });
+
+    const prepPlan = themes.slice(0, 3).map(function (item) {
+      return item.prepare;
+    });
+
+    prepPlan.push('Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.');
+    prepPlan.push('Prepare one story about a growth area. Search committees often value self-awareness when it is paired with a plan to learn.');
+
+    const keywords = themes.slice(0, 8).map(function (item) {
+      return item.theme;
+    });
+
+    output.hidden = false;
+
+    output.innerHTML = `
+      <section class="content-card">
+        <p>
+          <strong>How to read this report:</strong> This tool is a mentor-style decoder, not a hiring decision.
+          It helps you notice patterns in the posting and prepare more strategically.
+        </p>
+      </section>
+
+      <div class="further-reading">
+        <h3>Position Snapshot</h3>
+        <ul>${list(snapshot)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>What This Job Is Really About</h3>
+        <ul>${list(reallyAbout)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>What the Search Committee May Care About</h3>
+        <ul>${list(committeeCare)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Advice for Your Career Stage</h3>
+        <ul>${list(stageAdvice)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Resume Language to Notice</h3>
+        <p>Use these themes only when they honestly reflect your experience.</p>
+        <ul>${list(keywords)}</ul>
+      </div>
+
+      <div class="further-reading">
+        <h3>Highest-ROI Preparation Plan</h3>
+        <ol>${list(prepPlan)}</ol>
+      </div>
+
+      <div class="further-reading">
+        <h3>Confidence Check</h3>
+        <p>
+          A job posting is often a wish list, not a portrait of one perfect person.
+          If you can speak honestly about the core responsibilities, show evidence of related experience,
+          and name how you are growing, you may still be a credible candidate even if you do not match every preferred qualification.
+        </p>
+      </div>
+    `;
+  });
+
+  reset.addEventListener('click', function () {
+    form.reset();
+    output.hidden = true;
+    output.innerHTML = '';
+  });
+})();
+    </script>
   </body>
 </html>
