@@ -22,46 +22,48 @@
       />
 
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
 
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-button" type="button">
-            Topics
-          </button>
+  <a href="index.html">Home</a>
 
-          <div class="nav-dropdown-menu">
-            <a href="professional-identity.html">Professional Identity</a>
-            <a href="job-searching-rejection.html">Job Searching &amp; Rejection</a>
-            <a href="burnout-recovery.html">Burnout &amp; Recovery</a>
-            <a href="confidence-self-efficacy.html">Confidence &amp; Self-Efficacy</a>
-            <a href="mentorship-community.html">Mentorship &amp; Community</a>
-          </div>
-        </div>
+  <div class="nav-dropdown">
+    <button class="nav-dropdown-button" type="button">
+      Topics
+    </button>
 
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-button" type="button">
-            Tools &amp; Help
-          </button>
+    <div class="nav-dropdown-menu">
+      <a href="professional-identity.html">Professional Identity</a>
+      <a href="job-searching-rejection.html">Job Searching &amp; Rejection</a>
+      <a href="burnout-recovery.html">Burnout &amp; Recovery</a>
+      <a href="confidence-self-efficacy.html">Confidence &amp; Self-Efficacy</a>
+      <a href="mentorship-community.html">Mentorship &amp; Community</a>
+    </div>
+  </div>
 
-          <div class="nav-dropdown-menu">
-            <a href="reflection-tools.html">Reflection Tools</a>
-            <a href="skill-building-tools.html">Skill-Building Tools</a>
-          </div>
-        </div>
+  <div class="nav-dropdown">
+    <button class="nav-dropdown-button" type="button">
+      Tools & Help
+    </button>
 
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-button" type="button">
-            Community
-          </button>
+    <div class="nav-dropdown-menu">
+      <a href="reflection-tools.html">Reflection Tools</a>
+      <a href="skill-building-tools.html">Skill-Building Tools</a>
+    </div>
+  </div>
 
-          <div class="nav-dropdown-menu">
-            <a href="community.html">Join Community</a>
-            <a href="community-wisdom.html">Community Wisdom Archive</a>
-          </div>
-        </div>
+  <div class="nav-dropdown">
+    <button class="nav-dropdown-button" type="button">
+      Community
+    </button>
 
-        <a href="resource-library.html">Resource Library</a>
-      </nav>
+    <div class="nav-dropdown-menu">
+      <a href="community.html">Join Community</a>
+      <a href="community-wisdom.html">Community Wisdom Archive</a>
+    </div>
+  </div>
+
+  <a href="resource-library.html">Resource Library</a>
+
+</nav>
     </header>
 
     <div class="site-layout">
@@ -113,10 +115,10 @@
         <article class="article-section" id="tools-overview">
           <h2>Choose a Tool</h2>
 
-          <div class="related-grid">
-            <a href="#professional-skills-translator">Professional Skills Translator</a>
-            <a href="#job-description-decoder">Job Description Decoder</a>
-          </div>
+       <div class="related-grid">
+  <a href="#job-description-decoder">Job Description Decoder</a>
+  <a href="#professional-skills-translator">Professional Skills Translator</a>
+</div>
         </article>
 
         <article class="article-section" id="professional-skills-translator">
@@ -200,66 +202,6 @@
           <div id="career-translator-output" aria-live="polite" hidden></div>
         </article>
 
-        <article class="article-section" id="job-description-decoder">
-          <p class="reflection-label">Interactive Tool</p>
-
-          <h2>Job Description Decoder</h2>
-
-          <p>
-            Paste a library job description to make the posting easier to read.
-            This tool highlights visible requirements, repeated themes, action verbs,
-            and preparation priorities without pretending to judge your qualifications.
-          </p>
-
-          <p>
-            This is a private, browser-based tool. It does not use AI, does not send
-            your text anywhere, and does not save what you paste.
-          </p>
-
-          <form id="job-decoder-form">
-            <div class="further-reading">
-              <h3>1. Paste the job description</h3>
-
-              <textarea
-                id="job-description-text"
-                rows="14"
-                required
-                aria-label="Paste job description text"
-              ></textarea>
-            </div>
-
-            <div class="further-reading">
-              <h3>2. What type of library is this position in?</h3>
-
-              <label><input name="decoderLibraryType" type="radio" value="academic" required /> Academic library</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="public" /> Public library</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="school" /> School library</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="archives" /> Archives / Special Collections</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="health" /> Health Sciences library</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="law-government" /> Law / Government library</label><br />
-              <label><input name="decoderLibraryType" type="radio" value="unsure" /> Not sure</label>
-            </div>
-
-            <div class="further-reading">
-              <h3>3. Which best describes you?</h3>
-
-              <label><input name="decoderCareerStage" type="radio" value="mlis-student" required /> MLIS student</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="recent-graduate" /> Recent graduate</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="career-changer" /> Career changer</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="library-staff" /> Library staff</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="emerging" /> Emerging librarian, 0-2 years</label><br />
-              <label><input name="decoderCareerStage" type="radio" value="early-career" /> Early-career librarian, 3-5 years</label>
-            </div>
-
-            <p>
-              <button type="submit">Decode job description</button>
-              <button type="button" id="job-decoder-reset">Reset</button>
-            </p>
-          </form>
-
-          <div id="job-decoder-output" aria-live="polite" hidden></div>
-        </article>
-
         <section class="reflection" id="reflection">
           <p class="reflection-label">A Note on Use</p>
 
@@ -289,19 +231,16 @@
         <nav class="sidebar-links" aria-label="Skill-building tools page navigation">
           <a href="#tools-overview">Choose a Tool</a>
           <a href="#professional-skills-translator">Professional Skills Translator</a>
-          <a href="#job-description-decoder">Job Description Decoder</a>
           <a href="#reflection">A Note on Use</a>
         </nav>
       </aside>
     </div>
 
-    <script>
+   <script>
 (function () {
   const form = document.getElementById('career-translator-form');
   const output = document.getElementById('career-translator-output');
   const resetButton = document.getElementById('career-translator-reset');
-
-  if (!form || !output || !resetButton) return;
 
   function checkedValues(name) {
     return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (input) {
@@ -465,7 +404,8 @@
 
     if (fields.length === 0 || skills.length === 0) {
       output.hidden = false;
-      output.innerHTML = '<section class="content-card"><p><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</p></section>';
+      output.innerHTML =
+        '<section class="content-card"><p><strong>Almost there:</strong> Select at least one field and one kind of work experience to generate your translation.</p></section>';
       return;
     }
 
@@ -524,403 +464,6 @@
     output.innerHTML = '';
   });
 })();
-    </script>
-
-    <script>
-(function () {
-  const form = document.getElementById('job-decoder-form');
-  const output = document.getElementById('job-decoder-output');
-  const reset = document.getElementById('job-decoder-reset');
-
-  if (!form || !output || !reset) return;
-
-  const themeMap = {
-    'teaching and instruction': {
-      highSignal: ['information literacy', 'library instruction', 'instruction session', 'teach', 'teaching', 'workshop', 'lesson plan'],
-      related: ['curriculum', 'classroom', 'learning outcomes', 'tutorial', 'presentation'],
-      whyItMatters: 'The posting visibly includes teaching, training, or learning-support language.',
-      prep: 'Prepare one concrete example of teaching, training, tutoring, presenting, or helping someone understand something complex.'
-    },
-    'reference and research support': {
-      highSignal: ['reference', 'research consultation', 'research help', 'research support', 'literature search', 'search strategy'],
-      related: ['database', 'databases', 'scholarly sources', 'citation', 'research question'],
-      whyItMatters: 'The posting visibly includes language about helping users find, evaluate, or use information.',
-      prep: 'Prepare one example of helping someone clarify a question, locate information, or choose a search strategy.'
-    },
-    'public service': {
-      highSignal: ['public service', 'public services', 'patron services', 'user services', 'service desk', 'circulation'],
-      related: ['patron', 'customer service', 'front desk', 'user support'],
-      whyItMatters: 'The posting visibly includes direct service or user-support language.',
-      prep: 'Prepare one example of helping someone with patience, judgment, and care in a service context.'
-    },
-    'outreach and engagement': {
-      highSignal: ['outreach', 'community engagement', 'engagement', 'liaison', 'partnership', 'programming'],
-      related: ['events', 'collaboration', 'collaborate', 'campus partners', 'community partners'],
-      whyItMatters: 'The posting visibly includes relationship-building, programming, or engagement language.',
-      prep: 'Prepare one example of collaboration, outreach, event planning, or partnership-building.'
-    },
-    'equity, inclusion, and accessibility': {
-      highSignal: ['equity', 'diversity', 'inclusion', 'accessibility', 'inclusive', 'belonging'],
-      related: ['underserved', 'dei', 'anti-racist', 'barriers', 'universal design'],
-      whyItMatters: 'The posting visibly includes access, inclusion, accessibility, or equity language.',
-      prep: 'Prepare one specific example of making a service, lesson, space, collection, or interaction more accessible or inclusive.'
-    },
-    'assessment and improvement': {
-      highSignal: ['assessment', 'evaluation', 'evaluate', 'learning outcomes', 'program outcomes'],
-      related: ['survey', 'metrics', 'impact', 'feedback', 'measure', 'continuous improvement'],
-      whyItMatters: 'The posting visibly includes language about measuring, evaluating, or improving work.',
-      prep: 'Prepare one example of using feedback, observation, evidence, or data to improve something.'
-    },
-    'collections and resources': {
-      highSignal: ['collection development', 'collections', 'weeding', 'acquisitions', 'electronic resources'],
-      related: ['licensing', 'vendors', 'resource management', 'materials budget'],
-      whyItMatters: 'The posting visibly includes language about selecting, managing, evaluating, or promoting library resources.',
-      prep: 'Prepare to discuss how you would learn user needs and make thoughtful decisions about resources.'
-    },
-    'technology and digital tools': {
-      highSignal: ['technology', 'digital tools', 'troubleshooting', 'systems', 'software', 'makerspace'],
-      related: ['online learning', 'digital literacy', 'web services', 'learning management system'],
-      whyItMatters: 'The posting visibly includes technology, tools, systems, or troubleshooting language.',
-      prep: 'Prepare one example of learning a tool, supporting a user with technology, or solving a technical problem.'
-    },
-    'metadata, cataloging, and organization': {
-      highSignal: ['metadata', 'cataloging', 'cataloguing', 'classification', 'controlled vocabulary'],
-      related: ['description', 'discovery', 'records management', 'authority control'],
-      whyItMatters: 'The posting visibly includes language about organizing information for discovery and access.',
-      prep: 'Prepare one example involving organizing information, improving findability, or working carefully with records or data.'
-    },
-    'archives and special collections': {
-      highSignal: ['archives', 'special collections', 'archival', 'preservation', 'finding aid'],
-      related: ['arrangement', 'description', 'processing', 'rare books', 'manuscripts'],
-      whyItMatters: 'The posting visibly includes archival, preservation, or special collections language.',
-      prep: 'Prepare one example involving context, description, preservation, historical materials, or ethical access.'
-    },
-    'leadership and coordination': {
-      highSignal: ['leadership', 'supervise', 'supervision', 'management', 'project management'],
-      related: ['coordinate', 'committee', 'team', 'training', 'mentor', 'lead'],
-      whyItMatters: 'The posting visibly includes leadership, coordination, supervision, or project ownership language.',
-      prep: 'Prepare one example of leading, coordinating, supervising, training, or carrying a project through to completion.'
-    }
-  };
-
-  const actionVerbs = [
-    'teach', 'support', 'collaborate', 'coordinate', 'develop', 'manage',
-    'assess', 'evaluate', 'create', 'design', 'lead', 'train', 'provide',
-    'maintain', 'promote', 'facilitate', 'communicate', 'analyze', 'implement',
-    'plan', 'supervise', 'advise', 'consult', 'organize'
-  ];
-
-  function getRadio(name) {
-    const selected = document.querySelector('input[name="' + name + '"]:checked');
-    return selected ? selected.value : '';
-  }
-
-  function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  function termPattern(term) {
-    const escaped = escapeRegExp(term.trim()).replace(/\\\s+/g, '\\s+');
-    return new RegExp('(^|[^A-Za-z0-9])' + escaped + '([^A-Za-z0-9]|$)', 'gi');
-  }
-
-  function countTerm(text, term) {
-    const matches = text.match(termPattern(term));
-    return matches ? matches.length : 0;
-  }
-
-  function getHits(text, terms) {
-    return terms
-      .map(function (term) {
-        return { term: term, count: countTerm(text, term) };
-      })
-      .filter(function (hit) {
-        return hit.count > 0;
-      });
-  }
-
-  function pluralize(count, singular, plural) {
-    return count === 1 ? singular : plural;
-  }
-
-  function list(items) {
-    if (!items || items.length === 0) {
-      return '<li>No clear matches detected.</li>';
-    }
-
-    return items.map(function (item) {
-      return '<li>' + item + '</li>';
-    }).join('');
-  }
-
-  function analyzeThemes(text) {
-    const themes = [];
-
-    Object.keys(themeMap).forEach(function (theme) {
-      const data = themeMap[theme];
-      const highHits = getHits(text, data.highSignal);
-      const relatedHits = getHits(text, data.related);
-      const allHits = highHits.concat(relatedHits);
-      const totalCount = allHits.reduce(function (sum, hit) {
-        return sum + hit.count;
-      }, 0);
-
-      if (highHits.length > 0 || allHits.length >= 2) {
-        themes.push({
-          theme: theme,
-          highHits: highHits,
-          relatedHits: relatedHits,
-          allHits: allHits,
-          totalCount: totalCount,
-          whyItMatters: data.whyItMatters,
-          prep: data.prep
-        });
-      }
-    });
-
-    return themes.sort(function (a, b) {
-      return b.totalCount - a.totalCount;
-    });
-  }
-
-  function analyzeRequiredPreferred(text) {
-    const requiredHits = getHits(text, [
-      'required', 'required qualifications', 'minimum qualifications',
-      'minimum qualification', 'must have', 'requires', 'demonstrated ability'
-    ]);
-
-    const preferredHits = getHits(text, [
-      'preferred', 'preferred qualifications', 'desired qualifications',
-      'desired', 'strongly preferred', 'ideal candidate', 'nice to have'
-    ]);
-
-    const items = [];
-
-    if (requiredHits.length > 0) {
-      items.push('Required/minimum language appears in the posting: ' + requiredHits.map(function (hit) { return hit.term; }).join(', ') + '. Treat this as the employer\'s stated baseline.');
-    } else {
-      items.push('No clearly labeled required/minimum language was detected. The posting may still include requirements, but they may not be separated clearly.');
-    }
-
-    if (preferredHits.length > 0) {
-      items.push('Preferred/desired language appears in the posting: ' + preferredHits.map(function (hit) { return hit.term; }).join(', ') + '. Preferred qualifications usually strengthen an application, but they are not always mandatory.');
-    } else {
-      items.push('No clearly labeled preferred/desired language was detected. The posting may blend preferred qualifications into the main responsibilities.');
-    }
-
-    items.push('Do not assume you need to meet every preferred qualification before applying. Use the required/minimum language and the repeated responsibilities to decide how strong your match is.');
-
-    return items;
-  }
-
-  function analyzeCredentials(text) {
-    const items = [];
-    const mlisHits = getHits(text, ['mlis', 'mls', 'mis', 'master of library', 'library science', 'ala-accredited']);
-    const experienceHits = text.match(/\b\d+\+?\s+(years?|yrs?)\b/gi) || [];
-    const remoteHits = getHits(text, ['remote', 'hybrid', 'on-site', 'onsite', 'in person', 'in-person']);
-    const salaryHits = text.match(/\$\s?\d[\d,]*(?:\.\d+)?(?:\s?[-–]\s?\$?\d[\d,]*(?:\.\d+)?)?/g) || [];
-
-    if (mlisHits.length > 0) {
-      items.push('Credential language detected: ' + mlisHits.map(function (hit) { return hit.term; }).join(', ') + '. Read carefully to see whether the degree is required, preferred, or accepted as equivalent experience.');
-    } else {
-      items.push('No obvious MLIS/MLS language was detected by this tool. Check the posting manually for degree requirements or equivalency language.');
-    }
-
-    if (experienceHits.length > 0) {
-      items.push('Years-of-experience language detected: ' + Array.from(new Set(experienceHits)).join(', ') + '. Notice whether this is required or preferred.');
-    } else {
-      items.push('No obvious years-of-experience requirement was detected.');
-    }
-
-    if (remoteHits.length > 0) {
-      items.push('Work-location language detected: ' + remoteHits.map(function (hit) { return hit.term; }).join(', ') + '. Confirm whether this affects your interest or eligibility.');
-    }
-
-    if (salaryHits.length > 0) {
-      items.push('Salary or pay language may be present: ' + Array.from(new Set(salaryHits)).slice(0, 3).join(', ') + '.');
-    }
-
-    return items;
-  }
-
-  function analyzeVerbs(text) {
-    const verbCounts = actionVerbs.map(function (verb) {
-      return { verb: verb, count: countTerm(text, verb) };
-    }).filter(function (item) {
-      return item.count > 0;
-    }).sort(function (a, b) {
-      return b.count - a.count;
-    });
-
-    return verbCounts.slice(0, 8).map(function (item) {
-      return item.verb + ' (' + item.count + ' ' + pluralize(item.count, 'mention', 'mentions') + ')';
-    });
-  }
-
-  function buildLibraryTypeNote(libraryType) {
-    const notes = {
-      academic: 'Because you selected academic library, pay special attention to instruction, research support, liaison work, student success, assessment, and campus collaboration.',
-      public: 'Because you selected public library, pay special attention to public service, programming, community needs, technology help, access, and inclusion.',
-      school: 'Because you selected school library, pay special attention to student learning, curriculum support, youth services, information literacy, and collaboration with teachers.',
-      archives: 'Because you selected archives/special collections, pay special attention to description, preservation, access, ethics, context, and stewardship.',
-      health: 'Because you selected health sciences library, pay special attention to evidence-based information, database searching, research support, specialized users, and careful communication.',
-      'law-government': 'Because you selected law/government library, pay special attention to specialized reference, public records, policy research, legal information, government documents, and accuracy.',
-      unsure: 'Because the library type is unclear, focus on repeated responsibilities, required qualifications, and the action verbs that appear throughout the posting.'
-    };
-
-    return [notes[libraryType] || notes.unsure];
-  }
-
-  function buildThemeSummary(themes) {
-    if (themes.length === 0) {
-      return ['No strong theme clusters were detected. Try scanning the posting manually for repeated responsibilities, qualifications, and verbs.'];
-    }
-
-    return themes.slice(0, 6).map(function (item) {
-      const matched = item.allHits.map(function (hit) {
-        return hit.term + ' (' + hit.count + ')';
-      }).join(', ');
-
-      return '<strong>' + item.theme + '</strong>: ' + item.totalCount + ' ' + pluralize(item.totalCount, 'match', 'matches') + ' detected. Matched language: ' + matched + '.';
-    });
-  }
-
-  function buildPlainLanguageInterpretation(themes) {
-    if (themes.length === 0) {
-      return ['The tool did not detect enough repeated theme language to make a reliable interpretation. That does not mean the posting has no themes; it may use wording outside this tool\'s vocabulary.'];
-    }
-
-    return themes.slice(0, 5).map(function (item) {
-      return '<strong>' + item.theme + ':</strong> ' + item.whyItMatters;
-    });
-  }
-
-  function buildStageAdvice(careerStage) {
-    const advice = {
-      'mlis-student': [
-        'Use coursework, practica, internships, student work, and class projects as evidence when they connect to the posting.',
-        'Look for required qualifications first. Preferred qualifications can become growth areas or talking points.'
-      ],
-      'recent-graduate': [
-        'Translate recent academic work into professional examples instead of assuming it is too student-centered to count.',
-        'Use internships, assistantships, class projects, volunteer work, and campus employment when they match repeated posting themes.'
-      ],
-      'career-changer': [
-        'Look for transferable experience connected to service, teaching, technology, outreach, research, supervision, project coordination, or information organization.',
-        'Do not assume the employer will make the connection for you. Your resume and cover letter need to translate your experience clearly.'
-      ],
-      'library-staff': [
-        'Use staff experience to show readiness for librarian-level work, especially judgment, user support, systems knowledge, training, workflow improvement, or leadership.',
-        'Look for places where you have already done pieces of the work, even if your title was not librarian.'
-      ],
-      emerging: [
-        'Focus on concrete examples, growth, judgment, collaboration, and readiness.',
-        'You do not need to sound like a senior librarian. You need to show evidence, reflection, and capacity to grow.'
-      ],
-      'early-career': [
-        'Emphasize project ownership, specialization, leadership, collaboration, assessment, and professional trajectory.',
-        'Show not only what you have done, but how your professional judgment has developed.'
-      ]
-    };
-
-    return advice[careerStage] || ['Focus on the clearest examples that connect your experience to the posting.'];
-  }
-
-  function buildPreparationPlan(themes) {
-    const plan = [];
-
-    if (themes.length > 0) {
-      themes.slice(0, 3).forEach(function (item) {
-        plan.push(item.prep);
-      });
-    }
-
-    plan.push('Highlight the posting and mark required qualifications, preferred qualifications, repeated responsibilities, and repeated action verbs in different colors.');
-    plan.push('Revise your resume so the most relevant experience appears early and uses language that honestly mirrors the posting.');
-    plan.push('Prepare one story about a growth area. Strong candidates can often explain both what they know and how they learn.');
-
-    return plan;
-  }
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const jobText = document.getElementById('job-description-text').value;
-    const libraryType = getRadio('decoderLibraryType');
-    const careerStage = getRadio('decoderCareerStage');
-
-    const themes = analyzeThemes(jobText);
-    const requiredPreferred = analyzeRequiredPreferred(jobText);
-    const credentials = analyzeCredentials(jobText);
-    const verbs = analyzeVerbs(jobText);
-    const libraryNote = buildLibraryTypeNote(libraryType);
-    const themeSummary = buildThemeSummary(themes);
-    const plainLanguage = buildPlainLanguageInterpretation(themes);
-    const stageAdvice = buildStageAdvice(careerStage);
-    const preparationPlan = buildPreparationPlan(themes);
-
-    output.hidden = false;
-
-    output.innerHTML = `
-      <section class="content-card">
-        <p>
-          <strong>How to read this report:</strong> This is a transparent pattern-spotting tool.
-          It only reports language it can detect in the posting. It is not a hiring decision, an ATS score, or an evaluation of your worth.
-        </p>
-      </section>
-
-      <div class="further-reading">
-        <h3>Position Context</h3>
-        <ul>${list(libraryNote)}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Required, Preferred, and Credential Signals</h3>
-        <ul>${list(requiredPreferred.concat(credentials))}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Repeated Themes Detected</h3>
-        <ul>${list(themeSummary)}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Plain-Language Interpretation</h3>
-        <ul>${list(plainLanguage)}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Action Verbs to Notice</h3>
-        <p>These verbs can help you see what the posting emphasizes. Use them only when they honestly fit your experience.</p>
-        <ul>${list(verbs)}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Advice for Your Career Stage</h3>
-        <ul>${list(stageAdvice)}</ul>
-      </div>
-
-      <div class="further-reading">
-        <h3>Highest-ROI Preparation Plan</h3>
-        <ol>${list(preparationPlan)}</ol>
-      </div>
-
-      <div class="further-reading">
-        <h3>Confidence Check</h3>
-        <p>
-          A posting is often a mix of baseline requirements, preferences, institutional hopes, and future growth areas.
-          Focus first on the required qualifications and repeated responsibilities. Preferred qualifications can often become preparation topics rather than automatic reasons not to apply.
-        </p>
-      </div>
-    `;
-  });
-
-  reset.addEventListener('click', function () {
-    form.reset();
-    output.hidden = true;
-    output.innerHTML = '';
-  });
-})();
-    </script>
+</script>
   </body>
 </html>
